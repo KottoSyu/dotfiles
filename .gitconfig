@@ -1,0 +1,20 @@
+[user]
+	name = k.syu
+	email = k.syu6667@gmail.com
+[color]
+	ui = true
+[alias]
+	p = pull
+	pp = push
+	fe = fetch
+	co = commit
+	cm = commit -m
+	aa = add .
+	st = status
+	br = branch
+	ch = checkout
+	tr = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	tr-a = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+[gitsh]
+	defaultCommand = :exit

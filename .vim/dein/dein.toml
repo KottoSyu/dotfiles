@@ -1,0 +1,8 @@
+# clipboard
+[[plugins]]
+repo = 'kana/vim-fakeclip'
+
+# colorscheme(hybrid)
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+
