@@ -17,7 +17,14 @@ PROMPT="%{${fg[cyan]}%}[%n@%m] %{${fg[yellow]}%}%~%{${reset_color}%}
  %#:"
 
 #lsの色設定
-alias ls='ls --color=auto'
+case ${OSTYPE} in
+    darwin*)
+				alias ls='ls -G'
+        ;;
+    linux-gnu)
+				alias ls='ls --color=auto'
+        ;;
+esac
 alias grep='grep --color=auto'
 
 ### ヒストリの設定
