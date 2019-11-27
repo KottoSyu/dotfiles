@@ -49,7 +49,7 @@ case ${OSTYPE} in
 				fpath=($(brew --prefix)/share/zsh-completions $fpath)
         ;;
     linux-gnu)
-				fpath=(/home/$USER/zsh-completions/src $fpath)
+				fpath=(/home/$USER/.zsh-completions/src $fpath)
         ;;
 esac
 
