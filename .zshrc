@@ -49,6 +49,7 @@ case ${OSTYPE} in
 				fpath=($(brew --prefix)/share/zsh-completions $fpath)
         ;;
     linux-gnu)
+				fpath=(/home/$USER/zsh-completions/src $fpath)
         ;;
 esac
 
@@ -56,4 +57,6 @@ esac
 autoload -U compinit
 compinit -u
 
+# gitのalias
+alias g='git'
 
