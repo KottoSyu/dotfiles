@@ -43,12 +43,14 @@ setopt hist_ignore_dups
 # 開始と終了を記録
 setopt EXTENDED_HISTORY
 
-### gitの補完機能
-# brew の場合
-fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
-
 # zsh-completionsを追加
-fpath=($(brew --prefix)/share/zsh-completions $fpath)
+case ${OSTYPE} in
+    darwin*)
+				fpath=($(brew --prefix)/share/zsh-completions $fpath)
+        ;;
+    linux-gnu)
+        ;;
+esac
 
 ### 補完機能有効にする
 autoload -U compinit
