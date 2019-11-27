@@ -43,6 +43,8 @@ setopt hist_ignore_dups
 # 開始と終了を記録
 setopt EXTENDED_HISTORY
 
+fpath=(/home/k_syu/zsh-completions/src $fpath)
+
 ### 補完機能有効にする
 autoload -U compinit
 compinit -u
