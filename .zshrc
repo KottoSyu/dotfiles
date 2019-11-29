@@ -60,3 +60,7 @@ compinit -u
 # gitのalias
 alias g='git'
 
+### keypadのremap
+# enter
+bindkey -s "^[OM" "^M"
+
