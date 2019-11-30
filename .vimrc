@@ -45,9 +45,12 @@ inoremap <c-k> <Up>
 inoremap <c-b> <Left>
 inoremap <c-l> <Right>
 
-" 背景色の変更を無効にする
-autocmd ColorScheme * highlight Normal ctermbg=none
-autocmd ColorScheme * highlight LineNr ctermbg=none
+" " 背景色の変更を無効にする
+" autocmd ColorScheme * highlight Normal ctermbg=none
+" autocmd ColorScheme * highlight LineNr ctermbg=none
+
+" コメント文字の設定
+autocmd BufNewFile,BufRead *.vimrc setlocal commentstring=\"\ %s
 
 " 色設定
 syntax enable 

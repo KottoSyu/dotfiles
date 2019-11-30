@@ -2,3 +2,7 @@
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
 
+# comment out
+[[plugins]]
+repo = 'tpope/vim-commentary'
+
