@@ -53,8 +53,8 @@ autocmd ColorScheme * highlight LineNr ctermbg=none
 syntax enable 
 set background=dark
 colorscheme hybrid
-set visualbell
 set hlsearch
+set belloff=all
 
 "インデントを４にする
 set tabstop=2
