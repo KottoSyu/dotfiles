@@ -54,11 +54,13 @@ syntax enable
 set background=dark
 colorscheme hybrid
 set hlsearch
-set belloff=all
+set visualbell
 
 "インデントを４にする
-set tabstop=2
-set shiftwidth=2
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set smartindent
 
 " 行番号の表示
 set number
