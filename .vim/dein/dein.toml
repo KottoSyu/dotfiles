@@ -6,3 +6,29 @@ repo = 'w0ng/vim-hybrid'
 [[plugins]]
 repo = 'tpope/vim-commentary'
 
+# directory tree
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+# filetype icons
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+# status bar
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+# line status @git
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+# nerdtree add git status
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+
+# use git @vim
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+

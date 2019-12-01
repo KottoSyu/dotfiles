@@ -52,6 +52,13 @@ inoremap <c-l> <Right>
 " コメント文字の設定
 autocmd BufNewFile,BufRead *.vimrc setlocal commentstring=\"\ %s
 
+" NerdTreeの呼び出し
+nnoremap <silent> <space>n :NERDTreeToggle<CR>
+" file指定なしでvimを開く場合、NerdTreeを起動
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = " "
+let g:WebDevIconsNerdTreeAfterGlyphPadding = "" 
+
 " 色設定
 syntax enable 
 set background=dark
@@ -73,7 +80,6 @@ set showmatch
 " バックスペースキーで削除できるものを指定
 set backspace=indent,eol,start
 
-
 " 挿入モード時に非点滅の縦棒タイプのカーソル
 let &t_SI .= "\e[6 q"
 " ノーマルモード時に非点滅のブロックタイプのカーソル
@@ -82,25 +88,56 @@ let &t_EI .= "\e[2 q"
 let &t_SR .= "\e[4 q"
 set cursorline
 
-" <ステータスライン>
-" ファイル名表示
-set statusline=%F
-" 変更チェック表示
-set statusline+=%m
-" 読み込み専用かどうか表示
-set statusline+=%r
-" ヘルプページなら[HELP]と表示
-set statusline+=%h
-" プレビューウインドウなら[Prevew]と表示
-set statusline+=%w
-" これ以降は右寄せ表示
-set statusline+=%=
-" file encoding
-set statusline+=[ENC=%{&fileencoding}]
-" 現在行数/全行数
-set statusline+=[LOW=%l/%L]
-" ステータスラインを常に表示(0:表示しない、1:2つ以上ウィンドウがある時だけ表示)
-set laststatus=2
-" ステータスラインの色 
-highlight StatusLine   term=NONE cterm=NONE ctermfg=DarkGray ctermbg=LightBlue
+" 更新間隔を3秒に設定
+set updatetime=300
 
+" ESCからnormalモードに戻るタイムラグをなくす
+set ttimeoutlen=50
+
+" air-lineのtab機能を有効にする
+let g:airline#extensions#tabline#enabled = 1
+nnoremap <silent> <C-p> :bp<CR>
+nnoremap <silent> <C-n> :bn<CR>
+nnoremap <silent> <space>q :bd<CR>
+" air-lineのテーマ
+let g:airline_theme = 'hybridline'
+
+" buffer切り替え時の未保存警告を無効
+set hidden
+
+" 保存コマンド
+nnoremap <silent> <space>s :w<CR>
+nnoremap <silent> <space>w :wa<CR>
+
+" x,sでのレジスタ指定
+nnoremap x "_x
+nnoremap s "_s
+
+" ctrl+[でinsert modeを抜ける時、カーソルを右（元の位置）に戻す
+inoremap <Esc> <Esc><Right>
+
+" " 空行の挿入
+" nnoremap <space>o mzo<ESC>`z
+
+" ハイライトを消す
+" nnoremap <silent> <ESC><ESC> :noh<CR>
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+
+" 単語ハイライト
+nnoremap <silent> <Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
+" 単語一括置換（ハイライト）
+nmap # <Space><Space>:%s/<C-r>///g<Left><Left>
+
+" visualmodeからのハイライト、検索、置換
+xnoremap <silent> <Space> mz:call <SID>set_vsearch()<CR>:set hlsearch<CR>`z
+xnoremap * :<C-u>call <SID>set_vsearch()<CR>/<C-r>/<CR>
+xmap # <Space>:%s/<C-r>///g<Left><Left>
+
+function! s:set_vsearch()
+  silent normal gv"zy
+  let @/ = '\V' . substitute(escape(@z, '/\'), '\n', '\\n', 'g')
+endfunction
+
+" 複数行を移動
+vnoremap <C-p> "zx<Up>"zP`[V`]
+vnoremap <C-n> "zx"zp`[V`]
