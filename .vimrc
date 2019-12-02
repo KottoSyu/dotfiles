@@ -113,8 +113,8 @@ nnoremap <silent> <space>w :wa<CR>
 nnoremap x "_x
 nnoremap s "_s
 
-" ctrl+[でinsert modeを抜ける時、カーソルを右（元の位置）に戻す
-inoremap <Esc> <Esc><Right>
+" jjでinsert modeを抜ける時、カーソルを右（元の位置）に戻す
+inoremap jj <Esc><Right>
 
 " " 空行の挿入
 " nnoremap <space>o mzo<ESC>`z
