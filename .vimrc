@@ -101,6 +101,10 @@ nnoremap <silent> <C-n> :bn<CR>
 nnoremap <silent> <space>q :bd<CR>
 " air-lineのテーマ
 let g:airline_theme = 'hybridline'
+" fileのpathを表示しない
+let g:airline#extensions#tabline#fnamemod = ":t"
+" buffers -> 空白
+let g:airline#extensions#tabline#buffers_label = ""
 
 " buffer切り替え時の未保存警告を無効
 set hidden
