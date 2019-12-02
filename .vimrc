@@ -141,3 +141,7 @@ endfunction
 " 複数行を移動
 vnoremap <C-p> "zx<Up>"zP`[V`]
 vnoremap <C-n> "zx"zp`[V`]
+
+" swapファイルを作らない
+set noswapfile
+
