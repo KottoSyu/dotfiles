@@ -149,3 +149,8 @@ vnoremap <C-n> "zx"zp`[V`]
 " swapファイルを作らない
 set noswapfile
 
+" scrollの行数指定
+au BufEnter * set scroll=5
+" scrollの開始位置
+set scrolloff=5
+
