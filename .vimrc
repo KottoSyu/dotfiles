@@ -118,7 +118,7 @@ nnoremap x "_x
 nnoremap s "_s
 
 " jjでinsert modeを抜ける時、カーソルを右（元の位置）に戻す
-inoremap jj <Esc><Right>
+" inoremap jj <Esc><Right>
 
 " " 空行の挿入
 " nnoremap <space>o mzo<ESC>`z
