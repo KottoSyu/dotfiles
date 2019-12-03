@@ -51,6 +51,7 @@ inoremap <c-l> <Right>
 
 " コメント文字の設定
 autocmd BufNewFile,BufRead *.vimrc setlocal commentstring=\"\ %s
+autocmd FileType html setlocal commentstring=<!--\ %s\ -->
 
 " NerdTreeの呼び出し
 nnoremap <silent> <space>n :NERDTreeToggle<CR>
@@ -66,11 +67,19 @@ colorscheme hybrid
 set hlsearch
 set visualbell
 
-"インデントを４にする
+" インデントを４にする
 set expandtab
 set tabstop=4
 set shiftwidth=4
+set autoindent
 set smartindent
+" fileTypeによってインデントを変える
+augroup fileTypeIndent
+    autocmd!
+    autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.html setlocal tabstop=2 shiftwidth=2
+augroup END
+
 
 " 行番号の表示
 set number
