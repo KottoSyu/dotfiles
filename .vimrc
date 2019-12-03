@@ -111,7 +111,8 @@ nnoremap <silent> <space>q :bd<CR>
 " air-lineのテーマ
 let g:airline_theme = 'hybridline'
 " fileのpathを表示しない
-let g:airline#extensions#tabline#fnamemod = ":t"
+let g:airline#extensions#tabline#fnamemod = "%t"
+let g:airline_section_c = "%t"
 " buffers -> 空白
 let g:airline#extensions#tabline#buffers_label = ""
 
