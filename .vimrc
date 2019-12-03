@@ -58,7 +58,7 @@ nnoremap <silent> <space>n :NERDTreeToggle<CR>
 " file指定なしでvimを開く場合、NerdTreeを起動
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let g:WebDevIconsNerdTreeBeforeGlyphPadding = " "
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ""
+let g:WebDevIconsNerdTreeAfterGlyphPadding = " "
 
 " 色設定
 syntax enable
