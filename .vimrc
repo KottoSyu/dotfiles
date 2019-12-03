@@ -33,10 +33,10 @@ if dein#check_install()
  call dein#install()
 endif
 
-
 " 文字コードの指定
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+" set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileencodings=utf-8
 set fileformats=unix,dos,mac
 
 " 挿入モードでのカーソル移動
@@ -130,7 +130,8 @@ nnoremap s "_s
 " inoremap jj <Esc><Right>
 
 " " 空行の挿入
-" nnoremap <space>o mzo<ESC>`z
+nnoremap <space>o mzo<ESC>`z
+nnoremap <space>O mzO<ESC>`z
 
 " ハイライトを消す
 " nnoremap <silent> <ESC><ESC> :noh<CR>
