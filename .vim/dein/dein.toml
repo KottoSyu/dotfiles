@@ -36,3 +36,6 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'alvan/vim-closetag'
 
+# highlight whitespace
+[[plugins]]
+repo= 'bronson/vim-trailing-whitespace'
