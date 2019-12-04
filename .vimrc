@@ -144,18 +144,22 @@ nnoremap <silent> <Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearc
 nmap # <Space><Space>:%s/<C-r>///g<Left><Left>
 
 " visualmodeからのハイライト、検索、置換
-xnoremap <silent> <Space> mz:call <SID>set_vsearch()<CR>:set hlsearch<CR>`z
+xnoremap <silent> <Space><Space> mz:call <SID>set_vsearch()<CR>:set hlsearch<CR>`z
 xnoremap * :<C-u>call <SID>set_vsearch()<CR>/<C-r>/<CR>
-xmap # <Space>:%s/<C-r>///g<Left><Left>
+xmap # <Space><Space>:%s/<C-r>///g<Left><Left>
 
 function! s:set_vsearch()
   silent normal gv"zy
   let @/ = '\V' . substitute(escape(@z, '/\'), '\n', '\\n', 'g')
 endfunction
 
-" 複数行を移動
+" 行を移動
 vnoremap <C-p> "zx<Up>"zP`[V`]
 vnoremap <C-n> "zx"zp`[V`]
+
+" 行を複製
+vnoremap <space>p "zy"zP
+vnoremap <space>n "zy`]"zp
 
 " swapファイルを作らない
 set noswapfile

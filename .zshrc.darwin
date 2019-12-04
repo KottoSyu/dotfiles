@@ -1,0 +1,5 @@
+# vimエラー解消（意味はまだわからない）
+export LC_ALL=en_US.UTF-8
+
+# python3をデフォルトにする
+alias python="python3"
