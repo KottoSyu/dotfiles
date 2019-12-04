@@ -14,7 +14,7 @@ colors
 
 ### promptの設定
 PROMPT="%{${fg[cyan]}%}[%n@%m] %{${fg[yellow]}%}%~%{${reset_color}%}
- %#:"
+ %#: "
 
 #lsの色設定
 case ${OSTYPE} in
