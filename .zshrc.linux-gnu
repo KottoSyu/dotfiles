@@ -1,0 +1,32 @@
+# linuxbrew$B$N%Q%9$rDI2C(B
+export PATH='/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin':"$PATH"
+
+# Vagrant
+export VAGRANT_WSL_WINDOWS_ACCESS_USER= realsys
+export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
+export PATH="$PATH:/c/Program Files/Oracle/VirtualBox"
+export PATH="$PATH:/c/Windows/System32/"
+export PATH="$PATH:/c/Windows/System32/WindowsPowerShell/v1.0/"
+
+# Xserver
+
+# Docker
+export DOCKER_HOST=tcp://localhost:2375
+
+# $B?75,%U%!%$%k$N%Q!<%_%C%7%g%s@_Dj(B
+umask 002
+
+# 繰り返しの関数
+function subsh()
+{
+  eval "__precmd_for_subsh() {
+    if [ $# != 0 ]; then
+      print -z '$* '
+    else
+    fi
+  }"
+  autoload -Uz add-zsh-hook
+  add-zsh-hook precmd "__precmd_for_subsh"
+}
+alias jj="subsh"
+
