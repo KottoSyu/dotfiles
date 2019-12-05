@@ -169,3 +169,10 @@ au BufEnter * set scroll=5
 " scrollの開始位置
 set scrolloff=5
 
+" バックスペースで補完のポップアップを閉じる
+inoremap <expr><C-f> deoplete#close_popup()
+
+" インデントを表示
+nnoremap <space>i :IndentLinesEnable<CR>
+nnoremap <space>I :IndentLinesDisable<CR>
+

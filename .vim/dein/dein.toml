@@ -65,3 +65,10 @@ on_source = ['neosnippet.vim']
 [[plugins]]
 repo = 'gorodinskiy/vim-coloresque'
 
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+ hook_add = '''
+  let g:indentLine_char = '¦'
+  let g:indentLine_enabled = 1
+ '''
+
