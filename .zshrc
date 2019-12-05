@@ -27,6 +27,14 @@ case ${OSTYPE} in
 esac
 alias grep='grep --color=auto'
 
+# 便利なエイリアス
+alias la='ls -a'
+cdls ()
+{
+    \cd "$@" && la
+}
+alias cd="cdls"
+
 ### ヒストリの設定
 # 履歴ファイルの保存先
 export HISTFILE=${HOME}/.zsh_history

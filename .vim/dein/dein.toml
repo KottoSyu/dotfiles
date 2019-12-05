@@ -61,3 +61,7 @@ repo = 'Shougo/neosnippet.vim'
 repo = 'Shougo/neosnippet-snippets'
 on_source = ['neosnippet.vim']
 
+# show colors
+[[plugins]]
+repo = 'gorodinskiy/vim-coloresque'
+
