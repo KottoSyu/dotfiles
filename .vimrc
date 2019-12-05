@@ -173,6 +173,6 @@ set scrolloff=5
 inoremap <expr><C-f> deoplete#close_popup()
 
 " インデントを表示
-nnoremap <space>i :IndentLinesEnable<CR>
-nnoremap <space>I :IndentLinesDisable<CR>
+nnoremap <silent> <space>i :IndentLinesEnable<CR>
+nnoremap <silent> <space>I :IndentLinesDisable<CR>
 
