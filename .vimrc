@@ -176,3 +176,11 @@ inoremap <expr><C-f> deoplete#close_popup()
 nnoremap <silent> <space>i :IndentLinesEnable<CR>
 nnoremap <silent> <space>I :IndentLinesDisable<CR>
 
+" lexima(autoclose)でctrl-hをBSを同じ動きにする
+" let g:lexima_ctrlh_as_backspace = 1
+" 文末のみautocloseを適用する
+" call lexima#add_rule({'at': '\%#.*[-0-9a-zA-Z_,:]', 'char': '{', 'input': '{'})
+
+" indentlineの無効ファイルを指定
+let g:indentLine_fileTypeExclude = ['help']
+
