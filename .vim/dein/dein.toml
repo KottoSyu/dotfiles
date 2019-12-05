@@ -65,10 +65,14 @@ on_source = ['neosnippet.vim']
 [[plugins]]
 repo = 'gorodinskiy/vim-coloresque'
 
+# show indent
 [[plugins]]
 repo = 'Yggdroot/indentLine'
- hook_add = '''
+hook_add = '''
   let g:indentLine_char = '¦'
-  let g:indentLine_enabled = 1
  '''
+
+# auto close pare
+[[plugins]]
+repo = 'cohama/lexima.vim'
 
