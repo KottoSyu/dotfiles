@@ -52,6 +52,7 @@ inoremap <c-l> <Right>
 " コメント文字の設定
 autocmd BufNewFile,BufRead *.vimrc setlocal commentstring=\"\ %s
 autocmd FileType html setlocal commentstring=<!--\ %s\ -->
+autocmd FileType php setlocal commentstring=//\ %s
 
 " NerdTreeの呼び出し
 nnoremap <silent> <space>n :NERDTreeToggle<CR>
