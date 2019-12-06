@@ -63,7 +63,7 @@ on_source = ['neosnippet.vim']
 
 # show colors
 [[plugins]]
-repo = 'gorodinskiy/vim-coloresque'
+repo = 'ap/vim-css-color'
 
 # show indent
 [[plugins]]
