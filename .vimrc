@@ -60,7 +60,6 @@ nnoremap <silent> <space>n :NERDTreeToggle<CR>
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let g:WebDevIconsNerdTreeBeforeGlyphPadding = " "
 let g:WebDevIconsNerdTreeAfterGlyphPadding = " "
-
 " 色設定
 syntax enable
 set background=dark
@@ -129,7 +128,8 @@ nnoremap x "_x
 nnoremap s "_s
 
 " jjでinsert modeを抜ける時、カーソルを右（元の位置）に戻す
-" inoremap jj <Esc><Right>
+inoremap jj <Esc>zz
+inoremap kk <Esc>zzo
 
 " " 空行の挿入
 nnoremap <space>o mzo<ESC>`z
@@ -171,7 +171,7 @@ au BufEnter * set scroll=5
 set scrolloff=5
 
 " バックスペースで補完のポップアップを閉じる
-inoremap <expr><C-f> deoplete#close_popup()
+" inoremap <expr><C-f> deoplete#close_popup()
 
 " インデントを表示
 nnoremap <silent> <space>i :IndentLinesEnable<CR>
