@@ -99,7 +99,6 @@ set cursorline
 
 " 更新間隔を3秒に設定
 set updatetime=300
-
 " ESCからnormalモードに戻るタイムラグをなくす
 set ttimeoutlen=50
 
@@ -128,8 +127,8 @@ nnoremap x "_x
 nnoremap s "_s
 
 " jjでinsert modeを抜ける時、カーソルを右（元の位置）に戻す
-inoremap jj <Esc>zz
-inoremap kk <Esc>zzo
+inoremap jj <Esc>
+inoremap っｊ <Esc>
 
 " " 空行の挿入
 nnoremap <space>o mzo<ESC>`z
@@ -184,4 +183,9 @@ nnoremap <silent> <space>I :IndentLinesDisable<CR>
 
 " indentlineの無効ファイルを指定
 let g:indentLine_fileTypeExclude = ['help']
+
+" 常に画面の真ん中で入力するようにする
+" nnoremap o zzo
+" nnoremap O zzO
+inoremap <CR> <CR><C-o>zz
 

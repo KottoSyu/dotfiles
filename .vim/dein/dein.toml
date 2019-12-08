@@ -70,9 +70,12 @@ repo = 'ap/vim-css-color'
 repo = 'Yggdroot/indentLine'
 hook_add = '''
   let g:indentLine_char = '¦'
- '''
+'''
 
 # auto close pare
 [[plugins]]
 repo = 'cohama/lexima.vim'
+hook_add = '''
+  let g:lexima_ctrlh_as_backspace = 1
+'''
 
