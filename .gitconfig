@@ -7,6 +7,7 @@
 	p = pull
 	pp = push
 	fe = fetch
+    di = diff
 	co = commit
 	cm = commit -m
 	aa = add .
@@ -19,7 +20,7 @@
 [gitsh]
 	defaultCommand = :exit
 
-[credential] 
+[credential]
 	helper = cache --timeout=3600
 [core]
 	editor = vim -c \"set fenc=utf-8\"

@@ -184,8 +184,7 @@ nnoremap <silent> <space>I :IndentLinesDisable<CR>
 " indentlineの無効ファイルを指定
 let g:indentLine_fileTypeExclude = ['help']
 
-" 常に画面の真ん中で入力するようにする
-" nnoremap o zzo
-" nnoremap O zzO
-inoremap <CR> <CR><C-o>zz
+" 常に画面の真ん中で入力
+inoremap j<CR> <C-g>u<Esc>zzo
+
 
