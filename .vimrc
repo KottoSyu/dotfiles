@@ -117,7 +117,7 @@ let g:airline#extensions#tabline#buffers_label = ""
 
 
 " white-spaceの設定
-let g:better_whitespace_enabled=0
+let g:better_whitespace_enabled=1
 nnoremap <silent> <space>f :<C-u>ToggleWhitespace<CR>
 nnoremap <silent> <space>F :<C-u>StripWhitespace<CR>
 
