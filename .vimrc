@@ -193,6 +193,6 @@ let g:indentLine_fileTypeExclude = ['help']
 
 " 常に画面の真ん中で入力
 inoremap j<CR> <C-g>u<Esc>zzo
-
+" call lexima#insmode#map_hook('after', "<CR>", "x<BS><C-o>zz")
 " inoremap <CR> <CR>x<BS><C-o>zz
 
