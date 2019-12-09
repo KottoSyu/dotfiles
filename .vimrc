@@ -115,6 +115,13 @@ let g:airline_section_c = "%t"
 " buffers -> 空白
 let g:airline#extensions#tabline#buffers_label = ""
 
+
+" white-spaceの設定
+let g:better_whitespace_enabled=0
+nnoremap <silent> <space>f :<C-u>ToggleWhitespace<CR>
+nnoremap <silent> <space>F :<C-u>StripWhitespace<CR>
+
+
 " buffer切り替え時の未保存警告を無効
 set hidden
 
@@ -187,4 +194,5 @@ let g:indentLine_fileTypeExclude = ['help']
 " 常に画面の真ん中で入力
 inoremap j<CR> <C-g>u<Esc>zzo
 
+" inoremap <CR> <CR>x<BS><C-o>zz
 

@@ -38,7 +38,7 @@ repo = 'alvan/vim-closetag'
 
 # highlight whitespace
 [[plugins]]
-repo = 'bronson/vim-trailing-whitespace'
+repo = 'ntpeters/vim-better-whitespace'
 
 # dark powered complete tool
 [[plugins]]
