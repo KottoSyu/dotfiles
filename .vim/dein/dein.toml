@@ -35,6 +35,9 @@ repo = 'tpope/vim-fugitive'
 # auto close tag
 [[plugins]]
 repo = 'alvan/vim-closetag'
+hook_add = '''
+  let g:closetag_filetypes = 'html,php'
+'''
 
 # highlight whitespace
 [[plugins]]
