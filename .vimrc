@@ -40,9 +40,9 @@ set fileencodings=utf-8
 set fileformats=unix,dos,mac
 
 " 挿入モードでのカーソル移動
-inoremap <c-j> <Down>
-inoremap <c-k> <Up>
-inoremap <c-b> <Left>
+" inoremap <c-j> <Down>
+" inoremap <c-k> <Up>
+" inoremap <c-b> <Left>
 inoremap <c-l> <Right>
 
 " " 背景色の変更を無効にする
@@ -161,8 +161,10 @@ function! s:set_vsearch()
 endfunction
 
 " 行を移動
-vnoremap <C-p> "zx<Up>"zP`[V`]
+" vnoremap <C-p> "zx<Up>"zP`[V`]
 vnoremap <C-n> "zx"zp`[V`]
+vnoremap <silent> <C-p> :m.-2<CR>`[V`]
+" vnoremap <silent> <C-n> :m.+1<CR>`[V`]
 
 " 行を複製
 vnoremap <space>p "zy"zP
