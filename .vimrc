@@ -53,6 +53,7 @@ inoremap <c-l> <Right>
 autocmd BufNewFile,BufRead *.vimrc setlocal commentstring=\"\ %s
 autocmd FileType html setlocal commentstring=<!--\ %s\ -->
 autocmd FileType php setlocal commentstring=//\ %s
+autocmd FileType sql setlocal commentstring=--\ %s
 
 " NerdTreeの呼び出し
 nnoremap <silent> <space>n :NERDTreeToggle<CR>
@@ -197,4 +198,13 @@ let g:indentLine_fileTypeExclude = ['help']
 inoremap j<CR> <C-g>u<Esc>zzo
 " call lexima#insmode#map_hook('after', "<CR>", "x<BS><C-o>zz")
 " inoremap <CR> <CR>x<BS><C-o>zz
+
+" コマンドラインでの補完設定
+set wildmenu wildmode=list:longest,full
+" コマンドの履歴を1000件保存する
+set history=1000
+
+" コマンドラインで過去のコマンドを探す時、フィルタリング出来るようにする。
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
 
