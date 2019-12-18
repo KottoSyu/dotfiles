@@ -208,3 +208,8 @@ set history=1000
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
+" 検索する時に大文字、小文字を区別しない
+set ignorecase
+" 大文字を入力した時は、区別する
+set smartcase
+
