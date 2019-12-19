@@ -8,6 +8,9 @@ case ${OSTYPE} in
         ;;
 esac
 
+# 小文字入力時は大文字も補完する(大文字入力時は大文字のみ補完)
+zstyle ':completion*' matcher-list 'm:{[:lower:]}={[:upper:]}'
+
 # 色を使用
 autoload -Uz colors
 colors
