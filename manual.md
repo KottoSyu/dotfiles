@@ -54,3 +54,16 @@
 - cd dotfiles
 - ./link.sh
 
+## mysql8
+- yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-1    .noarch.rpm -y
+- install mysql
+- install mysql-community-server
+- systemclt start mysqld.service
+
+### how to start up
+- sudo cat /var/log/mysqld.log
+- mysql -u root -p
+- SET GLOBAL validate_password.length = 8;
+- SET GLOBAL validate_password.policy = LOW;
+- ALTER USER 'root'@'localhost' IDENTIFIED BY '******************'
+*********
