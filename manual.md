@@ -3,36 +3,36 @@
 ## vim
 
 - gcc
- - which gcc
- - install gcc
+  - which gcc
+  - install gcc
 
 - ncurses-devel
- - install ncurses-devel
+  - install ncurses-devel
 
 - lua
- - which lua
- - install lua lua-devel
+  - which lua
+  - install lua lua-devel
 
 - ruby
- - which ruby
- - install ruby ruby-devel
+  - which ruby
+  - install ruby ruby-devel
 
 - python3
- - which python3
- - install python3 python3-devel
+  - which python3
+  - install python3 python3-devel
 
 - vim
- - install git
- - git clone https://github.com/vim/vim.git
- - cd vim
- - sudo ./configure --with-features=huge --enable-multibyte --enable-luainterp=dynamic --enable-gpm --enable-cscope --enable-fontset --enable-fail-if-missing --prefix=/usr/local --enable-pythoninterp=dynamic --enable-python3interp=dynamic --enable-rubyinterp=dynamic
- - sudo make
- - ./src/vim --version
- - remove vim-enhanced
- - which vim
- - sudo make install
- - which vim
- - vim --version
+  - install git
+  - git clone https://github.com/vim/vim.git
+  - cd vim
+  - sudo ./configure --with-features=huge --enable-multibyte --enable-luainterp=dynamic --enable-gpm --enable-cscope --enable-fontset --enable-fail-if-missing --prefix=/usr/local --enable-pythoninterp=dynamic --enable-python3interp=dynamic --enable-rubyinterp=dynamic
+  - sudo make
+  - ./src/vim --version
+  - remove vim-enhanced
+  - which vim
+  - sudo make install
+  - which vim
+  - vim --version
 
 ## zsh
 - which zsh
@@ -63,7 +63,11 @@
 ### how to start up
 - sudo cat /var/log/mysqld.log
 - mysql -u root -p
-- SET GLOBAL validate_password.length = 8;
-- SET GLOBAL validate_password.policy = LOW;
-- ALTER USER 'root'@'localhost' IDENTIFIED BY '******************'
-*********
+- SET GLOBAL validate\_password.length = 8;
+- SET GLOBAL validate\_password.policy = LOW;
+- SHOW VARIABLES LIKE 'validate\_password%';
+- ALTER USER 'root'@'localhost' IDENTIFIED BY '12345678';
+- UNINSTALL COMPONENT 'file://component\_validate\_password';
+- create user dbuser@localhost;
+- grant all on \*.\* to dbuser@localhost;
+- INSTALL COMPONENT 'file://component\_validate\_password';
