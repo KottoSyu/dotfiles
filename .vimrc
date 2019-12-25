@@ -52,7 +52,8 @@ inoremap <c-l> <Right>
 " コメント文字の設定
 autocmd BufNewFile,BufRead *.vimrc setlocal commentstring=\"\ %s
 autocmd FileType html setlocal commentstring=<!--\ %s\ -->
-autocmd FileType php setlocal commentstring=//\ %s
+autocmd BufNewFile,BufRead *.php setlocal commentstring=//\ %s
+autocmd BufNewFile,BufRead *.ctp setlocal commentstring=<!--\ %s\ -->
 autocmd FileType sql setlocal commentstring=--\ %s
 
 " NerdTreeの呼び出し
@@ -127,8 +128,8 @@ nnoremap <silent> <space>F :<C-u>StripWhitespace<CR>
 set hidden
 
 " 保存コマンド
-nnoremap <silent> <space>s :w<CR>
-nnoremap <silent> <space>w :wa<CR>
+nnoremap <silent> <space>w :w<CR>
+nnoremap <silent> <space>W :wa<CR>
 
 " x,sでのレジスタ指定
 nnoremap x "_x
@@ -147,14 +148,14 @@ nnoremap <space>O mzO<ESC>`z
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 " 単語ハイライト
-nnoremap <silent> <Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
+nnoremap <silent> <space><space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
 " 単語一括置換（ハイライト）
-nmap # <Space><Space>:%s/<C-r>///g<Left><Left>
+nmap <space>s <space><space>:%s/<C-r>///g<Left><Left>
 
 " visualmodeからのハイライト、検索、置換
-xnoremap <silent> <Space><Space> mz:call <SID>set_vsearch()<CR>:set hlsearch<CR>`z
-xnoremap * :<C-u>call <SID>set_vsearch()<CR>/<C-r>/<CR>
-xmap # <Space><Space>:%s/<C-r>///g<Left><Left>
+xnoremap <silent> <space><space> mz:call <SID>set_vsearch()<CR>:set hlsearch<CR>`z
+" xnoremap * :<C-u>call <SID>set_vsearch()<CR>/<C-r>/<CR>
+xmap <space>s <space><space>:%s/<C-r>///g<Left><Left>
 
 function! s:set_vsearch()
   silent normal gv"zy
