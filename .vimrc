@@ -214,3 +214,5 @@ set ignorecase
 " 大文字を入力した時は、区別する
 set smartcase
 
+" %%でアクテイブバッファのパスを出す(from 実践vim)
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
