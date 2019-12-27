@@ -216,3 +216,4 @@ set smartcase
 
 " %%でアクテイブバッファのパスを出す(from 実践vim)
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+" %:p でフルパスを出せる
