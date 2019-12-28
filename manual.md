@@ -71,3 +71,18 @@
 - create user dbuser@localhost;
 - grant all on \*.\* to dbuser@localhost;
 - INSTALL COMPONENT 'file://component\_validate\_password';
+
+
+## centos
+- version確認
+  - cat /etc/redhat-release
+- lsのdirの色設定
+  - sudo cp /etc/DIR\_COLORS ~/.dir\_colos
+  - ls -al
+  - chown ...
+  - vim .dir\_colos
+
+## vagrant
+- SSL証明書error
+  - vim Vagrantfile
+  - config.vm.box\_download\_insecure = true
