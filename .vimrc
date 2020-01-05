@@ -66,8 +66,11 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = " "
 syntax enable
 set background=dark
 colorscheme hybrid
-set hlsearch
 set visualbell
+
+" 検索設定
+set hlsearch
+set incsearch
 
 " インデントを４にする
 set expandtab
@@ -214,6 +217,8 @@ set ignorecase
 " 大文字を入力した時は、区別する
 set smartcase
 
-" %%でアクテイブバッファのパスを出す(from 実践vim)
-cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+" %%でアクテイブバッファのフルパスを出す(from 実践vim)
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:p:h').'/' : '%%'
 " %:p でフルパスを出せる
+" set path+=
+" find EXコマンドでファイルを見つける
