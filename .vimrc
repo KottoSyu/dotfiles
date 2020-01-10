@@ -102,8 +102,8 @@ let &t_EI .= "\e[2 q"
 let &t_SR .= "\e[4 q"
 set cursorline
 
-" 更新間隔を3秒に設定
-set updatetime=300
+" 更新間隔を2秒に設定
+set updatetime=200
 " ESCからnormalモードに戻るタイムラグをなくす
 set ttimeoutlen=50
 

@@ -27,3 +27,5 @@ function subsh()
 }
 alias jj="subsh"
 
+# ホームのbinフォルダにPATHを通す(自作コマンド)
+export PATH="/home/k_syu/bin:$PATH"
