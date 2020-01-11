@@ -50,11 +50,11 @@ inoremap <c-l> <Right>
 " autocmd ColorScheme * highlight LineNr ctermbg=none
 
 " コメント文字の設定
-autocmd BufNewFile,BufRead *.vimrc setlocal commentstring=\"\ %s
-autocmd FileType html setlocal commentstring=<!--\ %s\ -->
-autocmd BufNewFile,BufRead *.php setlocal commentstring=//\ %s
-autocmd BufNewFile,BufRead *.ctp setlocal commentstring=<!--\ %s\ -->
-autocmd FileType sql setlocal commentstring=--\ %s
+" autocmd BufNewFile,BufRead *.vimrc setlocal commentstring=\"\ %s
+" autocmd FileType html setlocal commentstring=<!--\ %s\ -->
+" autocmd BufNewFile,BufRead *.php setlocal commentstring=//\ %s
+" autocmd BufNewFile,BufRead *.ctp setlocal commentstring=<!--\ %s\ -->
+" autocmd FileType sql setlocal commentstring=--\ %s
 
 " NerdTreeの呼び出し
 nnoremap <silent> <space>n :NERDTreeToggle<CR>
@@ -222,3 +222,7 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:p:h').'/' : '%%'
 " %:p でフルパスを出せる
 " set path+=
 " find EXコマンドでファイルを見つける
+
+" タグなどの対応ジャンプ
+filetype plugin on " 重要だったみたい（コメント文字も出来るようになった！）
+packadd! matchit
