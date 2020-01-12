@@ -65,8 +65,14 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = " "
 " 色設定
 syntax enable
 set background=dark
+" vimの背景色をなしにする
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none
+autocmd ColorScheme * highlight cursorLine ctermbg=black
 colorscheme hybrid
-set visualbell
+" set visualbell
+set visualbell t_vb=
+
 
 " 検索設定
 set hlsearch
@@ -113,7 +119,7 @@ nnoremap <silent> <C-p> :bp<CR>
 nnoremap <silent> <C-n> :bn<CR>
 nnoremap <silent> <space>q :bd<CR>
 " air-lineのテーマ
-let g:airline_theme = 'hybrid'
+let g:airline_theme = 'papercolor'
 " fileのpathを表示しない
 let g:airline#extensions#tabline#fnamemod = ":t"
 let g:airline_section_c = "%t"
