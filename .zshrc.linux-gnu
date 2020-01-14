@@ -29,3 +29,6 @@ alias jj="subsh"
 
 # ホームのbinフォルダにPATHを通す(自作コマンド)
 export PATH="/home/k_syu/bin:$PATH"
+
+# 新規フォルダ作成のパーミッション設定
+umask 002
