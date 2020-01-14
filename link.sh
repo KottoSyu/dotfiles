@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOT_FILES=(.vimrc .vim .gitconfig .zshrc .myclirc .my.cnf)
+DOT_FILES=(.vimrc .vim .gitconfig .zshrc .myclirc .my.cnf .tmux.conf)
 
 case ${OSTYPE} in
     darwin*)

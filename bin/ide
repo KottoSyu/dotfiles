@@ -2,3 +2,9 @@
 
 tmux rename-session MyWork
 tmux rename-window IDE
+tmux split-window -h -p 40
+tmux split-window -v -p 40
+tmux clock-mode
+tmux select-pane -L
+vim
+
