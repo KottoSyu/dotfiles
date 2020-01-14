@@ -1,4 +1,7 @@
-###OS毎の設定ファイルを適用
+## PATH
+export PATH="$PATH:$HOME/dotfiles/bin"
+
+### OS毎の設定ファイルを適用
 case ${OSTYPE} in
     darwin*)
         source ~/.zshrc.darwin

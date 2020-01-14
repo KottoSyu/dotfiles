@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+tmux rename-session MyWork
+tmux rename-window IDE
