@@ -69,6 +69,7 @@ set background=dark
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none ctermfg=darkgray
 autocmd ColorScheme * highlight cursorLine ctermbg=black
+autocmd ColorScheme * highlight Visual ctermbg=239
 colorscheme hybrid
 " set visualbell
 set visualbell t_vb=
