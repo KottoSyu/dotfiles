@@ -67,7 +67,7 @@ syntax enable
 set background=dark
 " vimの背景色をなしにする
 autocmd ColorScheme * highlight Normal ctermbg=none
-autocmd ColorScheme * highlight LineNr ctermbg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none ctermfg=darkgray
 autocmd ColorScheme * highlight cursorLine ctermbg=black
 colorscheme hybrid
 " set visualbell
