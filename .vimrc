@@ -85,7 +85,12 @@ set tabstop=4
 set shiftwidth=4
 set autoindent
 set smartindent
+
+" filetypeの設定　大事
+filetype plugin on " 重要だったみたい（コメント文字も出来るようになった！）
+filetype indent on
 " fileTypeによってインデントを変える
+
 augroup fileTypeIndent
     autocmd!
     autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 shiftwidth=2
@@ -231,5 +236,4 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:p:h').'/' : '%%'
 " find EXコマンドでファイルを見つける
 
 " タグなどの対応ジャンプ
-filetype plugin on " 重要だったみたい（コメント文字も出来るようになった！）
 packadd! matchit
