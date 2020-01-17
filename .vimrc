@@ -35,9 +35,10 @@ endif
 
 " 文字コードの指定
 set encoding=utf-8
+set fileencodings=utf-8
 " ファイルを開く文字コードの指定
 " set encodingで指定した文字コードは一番最後に記述する(後ろの指定は無視されるため)
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+" set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 set fileformats=unix,dos,mac
 
 " 挿入モードでのカーソル移動
@@ -150,8 +151,8 @@ nnoremap <silent> <space>w :w<CR>
 nnoremap <silent> <space>W :wa<CR>
 
 " x,sでのレジスタ指定
-nnoremap x "_x
-nnoremap s "_s
+" nnoremap x "_x
+" nnoremap s "_s
 
 " jjでinsert modeを抜ける時、カーソルを右（元の位置）に戻す
 inoremap jj <Esc>
