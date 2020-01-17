@@ -35,8 +35,9 @@ endif
 
 " 文字コードの指定
 set encoding=utf-8
-" set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
-set fileencodings=utf-8
+" ファイルを開く文字コードの指定
+" set encodingで指定した文字コードは一番最後に記述する(後ろの指定は無視されるため)
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 set fileformats=unix,dos,mac
 
 " 挿入モードでのカーソル移動
