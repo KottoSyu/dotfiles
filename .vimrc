@@ -44,7 +44,9 @@ set fileformats=unix,dos,mac
 " inoremap <c-j> <Down>
 " inoremap <c-k> <Up>
 " inoremap <c-b> <Left>
-inoremap <c-l> <Right>
+" inoremap <c-l> <Right>
+" lexima.vimを使っていても、ドットで繰り返せるように
+inoremap <silent> <C-l> <C-r>=lexima#insmode#leave(1, '<LT>C-G>U<LT>RIGHT>')<CR>
 
 " " 背景色の変更を無効にする
 " autocmd ColorScheme * highlight Normal ctermbg=none
