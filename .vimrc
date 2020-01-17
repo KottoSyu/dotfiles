@@ -93,12 +93,13 @@ set smartindent
 " filetypeの設定　大事
 filetype plugin on " 重要だったみたい（コメント文字も出来るようになった！）
 filetype indent on
-" fileTypeによってインデントを変える
 
+" fileTypeによってインデントを変える
 augroup fileTypeIndent
     autocmd!
     autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.html setlocal tabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.css setlocal tabstop=2 shiftwidth=2
 augroup END
 
 
