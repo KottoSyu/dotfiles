@@ -159,9 +159,13 @@ nnoremap <silent> <space>W :wa<CR>
 inoremap jj <Esc>
 inoremap っｊ <Esc>
 
-" " 空行の挿入
-nnoremap <space>o mzo<ESC>`z
-nnoremap <space>O mzO<ESC>`z
+" 空行の挿入
+" nnoremap <space>o mzo<ESC>`z
+" nnoremap <space>O mzO<ESC>`z
+" append関数を使うやり方(line('.')で現在行を取得出来る)
+" 自動コメント文字挿入onでも挿入を防げる
+nnoremap <silent> <space>o :call append(line('.'), '')<CR>
+nnoremap <silent> <space>O :call append(line('.')-1, '')<CR>
 
 " ハイライトを消す
 " nnoremap <silent> <ESC><ESC> :noh<CR>
@@ -242,3 +246,10 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:p:h').'/' : '%%'
 
 " タグなどの対応ジャンプ
 packadd! matchit
+
+" コメント行にいる時に、自動でコメント文字挿入をなしにする
+augroup auto_comment_off
+	autocmd!
+	autocmd BufEnter * setlocal formatoptions-=r
+	autocmd BufEnter * setlocal formatoptions-=o
+augroup END
