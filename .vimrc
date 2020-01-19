@@ -253,3 +253,7 @@ augroup auto_comment_off
 	autocmd BufEnter * setlocal formatoptions-=r
 	autocmd BufEnter * setlocal formatoptions-=o
 augroup END
+
+" ノーマルモードでenterで改行
+nnoremap <CR> mza<CR><ESC>`z
+nnoremap <TAB> i<space><ESC>
