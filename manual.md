@@ -4,39 +4,43 @@
 
 - gcc
   - which gcc
-  - install gcc
+  - yum install -y gcc
 
 - ncurses-devel
-  - install ncurses-devel
+  - yum install -y ncurses-devel
 
 - lua
   - which lua
-  - install lua lua-devel
+  - yum install -y lua-devel
 
 - ruby
   - which ruby
-  - install ruby ruby-devel
+  - yum install -y ruby-devel
+
+- python
+  - which python
+  - yum install -y python-devel
 
 - python3
   - which python3
-  - install python3 python3-devel
+  - yum install -y python3-devel
 
 - vim
   - install git
   - git clone https://github.com/vim/vim.git
   - cd vim
-  - sudo ./configure --with-features=huge --enable-multibyte --enable-luainterp=dynamic --enable-gpm --enable-cscope --enable-fontset --enable-fail-if-missing --prefix=/usr/local --enable-pythoninterp=dynamic --enable-python3interp=dynamic --enable-rubyinterp=dynamic
+  - ./configure --with-features=huge --enable-multibyte --enable-luainterp=dynamic --enable-gpm --enable-cscope --enable-fontset --enable-fail-if-missing --prefix=/usr/local --enable-pythoninterp=dynamic --enable-python3interp=dynamic --enable-rubyinterp=dynamic
   - sudo make
   - ./src/vim --version
-  - remove vim-enhanced
+  - yum remove vim-enhanced
   - which vim
-  - sudo make install
+  - make install
   - which vim
   - vim --version
 
 ## zsh
 - which zsh
-- install zsh
+- yum install -y zsh
 - chsh -s PATH/zsh \n (if no command chsh -> install util-linux-user)
 
 ## zsh-completions
@@ -77,10 +81,9 @@
 - version確認
   - cat /etc/redhat-release
 - lsのdirの色設定
-  - sudo cp /etc/DIR\_COLORS ~/.dir\_colos
-  - ls -al
-  - chown ...
+  - sudo cp /etc/DIR\_COLORS ~/.dir\_colors
   - vim .dir\_colos
+  - eval 'dircolors .dir\_colors -b'
 
 ## vagrant
 - SSL証明書error
