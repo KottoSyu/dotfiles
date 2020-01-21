@@ -257,3 +257,6 @@ augroup END
 " ノーマルモードでenterで改行
 nnoremap <CR> mza<CR><ESC>`z
 nnoremap <TAB> i<space><ESC>
+
+" 定義ジャンプ(php)
+nmap <silent> <space>g :<c-u>call phpactor#GotoDefinition()<CR>
