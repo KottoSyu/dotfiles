@@ -101,3 +101,11 @@ repo = 'tpope/vim-repeat'
 # interface for vim (Dark powered unite.vim)
 [[plugins]]
 repo = 'Shougo/denite.nvim'
+
+# phpactor
+[[plugins]]
+repo = 'phpactor/phpactor'
+build = 'composer install'
+# for deoplete
+[[plugins]]
+repo = 'kristijanhusak/deoplete-phpactor'
