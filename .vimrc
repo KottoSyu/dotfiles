@@ -1,5 +1,5 @@
 " deinがインストールされるディレクトリの指定
-let s:dein_dir = expand('~/.cache/dein') "<- dein によってプラグインがインストールされるディレクトリ
+let s:dein_dir = expand('~/.vimplug/dein') "<- dein によってプラグインがインストールされるディレクトリ
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
 " deinがインストールされているかをチェック インストールされていなかったらdeinをダウンロードしてくる
