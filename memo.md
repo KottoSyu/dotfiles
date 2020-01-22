@@ -1,6 +1,8 @@
-# googleの拡張機能、Vimiumを入れてみる。
-
-- 適用済み
+# googleの拡張機能
+- Vimium
+  - vimのキーバインドでgoogleを操作
+- Easy Auto Refresh
+  - 自動リロード
 
 # deoplete.vimには、python3のneovimパッケージが必要。
 
