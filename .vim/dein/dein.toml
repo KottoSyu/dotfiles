@@ -109,3 +109,7 @@ build = 'composer install'
 # for deoplete
 [[plugins]]
 repo = 'kristijanhusak/deoplete-phpactor'
+
+# syntax for blade
+[[plugins]]
+repo = 'jwalton512/vim-blade'
