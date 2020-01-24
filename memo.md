@@ -1,8 +1,9 @@
 # googleの拡張機能
 - Vimium
   - vimのキーバインドでgoogleを操作
-- Easy Auto Refresh
-  - 自動リロード
+- ~~Easy Auto Refresh~~
+  - 情報漏えいの可能性が
+  - browser-syncを使おう
 
 # deoplete.vimには、python3のneovimパッケージが必要。
 
