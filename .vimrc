@@ -63,7 +63,7 @@ inoremap <silent> <C-l> <C-r>=lexima#insmode#leave(1, '<LT>C-G>U<LT>RIGHT>')<CR>
 " NerdTreeの呼び出し
 nnoremap <silent> <space>n :NERDTreeToggle<CR>
 " file指定なしでvimを開く場合、NerdTreeを起動
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let g:WebDevIconsNerdTreeBeforeGlyphPadding = " "
 let g:WebDevIconsNerdTreeAfterGlyphPadding = " "
 " 色設定
