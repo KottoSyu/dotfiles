@@ -255,7 +255,7 @@ augroup auto_comment_off
 augroup END
 
 " ノーマルモードでenterで改行
-nnoremap <CR> mza<CR><ESC>`z
+nnoremap <space><CR> mza<CR><ESC>`z
 nnoremap <TAB> i<space><ESC>
 
 " 定義ジャンプ(php)
