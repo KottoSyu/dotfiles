@@ -28,3 +28,10 @@
 - -i   検索時に大文字/小文字を区別しない
 - -F   1画面でファイル全体が表示できる場合はlessを自動終了
 - -X   端末にtermcap初期化文字、非初期化文字を送らない
+
+# browser-sync
+- browser-sync start --server(-s) --file(-f)" " --startPath" "
+
+# vim
+- so $MYVIMRC
+- bufdo e(!)
