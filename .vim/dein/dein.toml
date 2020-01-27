@@ -110,6 +110,6 @@ build = 'composer install'
 [[plugins]]
 repo = 'kristijanhusak/deoplete-phpactor'
 
-# syntax for blade
+# vim language-packs
 [[plugins]]
-repo = 'jwalton512/vim-blade'
+repo = 'sheerun/vim-polyglot'
