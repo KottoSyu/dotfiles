@@ -100,6 +100,7 @@ augroup fileTypeIndent
     autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.html setlocal tabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.css setlocal tabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.js setlocal tabstop=2 shiftwidth=2
 augroup END
 
 
@@ -286,3 +287,5 @@ nmap <space>d [denite]
 nnoremap <silent> [denite]d :<C-u>Denite -direction=top buffer<CR>
 " register一覧
 nnoremap <silent> [denite]r :<C-u>Denite -direction=top register<CR>
+" 最近開いたfile一覧
+nnoremap <silent> [denite]o :<C-u>Denite -direction=top file/old<CR>
