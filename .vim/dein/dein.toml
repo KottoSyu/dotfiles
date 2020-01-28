@@ -113,3 +113,8 @@ repo = 'kristijanhusak/deoplete-phpactor'
 # vim language-packs
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
+
+# javascript completion
+[[plugins]]
+repo = 'ternjs/tern_for_vim'
+build = 'npm install'
