@@ -84,6 +84,16 @@
   - sudo cp /etc/DIR\_COLORS ~/.dir\_colors
   - vim .dir\_colos
   - eval 'dircolors .dir\_colors -b'
+- timezone
+  - timedatectl status
+  - sudo timedatectl set-timezone Asia/Tokyo
+- locale
+  - localectl status
+  - sudo localectl set-locale LANG=ja_JP.UTF-8
+  - source /etc/locale.conf
+- service
+  - systemctl list-jobs
+  - systemctl list-unit-files --type=service
 
 ## vagrant
 - SSL証明書error
