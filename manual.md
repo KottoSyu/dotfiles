@@ -29,13 +29,14 @@
   - install git
   - git clone https://github.com/vim/vim.git
   - cd vim
-  - ./configure --with-features=huge --enable-multibyte --enable-luainterp=dynamic --enable-gpm --enable-cscope --enable-fontset --enable-fail-if-missing --prefix=/usr/local --enable-pythoninterp=dynamic --enable-python3interp=dynamic --enable-rubyinterp=dynamic
+  - ./configure --with-features=huge --enable-multibyte --enable-luainterp=dynamic --enable-gpm --enable-cscope --enable-fontset --enable-fail-if-missing --prefix=/usr/local --enable-python3interp=dynamic --enable-rubyinterp=dynamic
   - sudo make
   - ./src/vim --version
   - yum remove vim-enhanced
   - which vim
   - make install
   - which vim
+      ns .zsh-completions
   - vim --version
 
 ## zsh
@@ -44,7 +45,7 @@
 - chsh -s PATH/zsh \n (if no command chsh -> install util-linux-user)
 
 ## zsh-completions
-- git clone https://github.com/zsh-users/zsh-completions 
+- git clone https://github.com/zsh-users/zsh-completions
 - mv zsh-completions .zsh-completions
 
 ## neovim
@@ -52,6 +53,36 @@
 
 ## mycli
 - pip3 install mycli
+
+## tmux
+- yum install tmux
+
+## php
+- sudo yum install epel-release
+- sudo yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+- sudo yum update
+- sudo yum repolist
+- yum info php --enablerepo=epel,remi,remi-php73
+- sudo yum -y install --enablerepo=epel,remi,remi-php73 php php-devel php-mbstring php-pdo php-gd php-xml php-mcrypt
+- php -r "echo phpinfo();" | grep "php.ini"
+### zip unzip
+- sudo yum install -y zip unzip
+
+
+## composer
+- php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+- php -r "if (hash_file('sha384', 'composer-setup.php') === 'e0012edf3e80b6978849f5eff0d4b4e4c79ff1609dd1e613307e16318854d24ae64f26d17af3ef0bf7cfb710ca74755a') { echo 'Installer verified';  } else { echo 'Installer corrupt'; unlink('composer-setup.php');  } echo PHP_EOL;"
+- php composer-setup.php
+- php -r "unlink('composer-setup.php');"
+- mv composer.phar /usr/local/bin/composer
+
+## nodeJS npm
+- su -
+- curl -sL https://rpm.nodesource.com/setup_10.x | bash -
+- yum install nodejs
+- node -v
+- npm -v
+- npm update -g
 
 ## dotfiles
 - git clone https://github.com/k-syu0/dotfiles
@@ -89,7 +120,7 @@
   - sudo timedatectl set-timezone Asia/Tokyo
 - locale
   - localectl status
-  - sudo localectl set-locale LANG=ja_JP.UTF-8
+  <!-- - sudo localectl set-locale LANG=en_US.utf8 -->
   - source /etc/locale.conf
 - service
   - systemctl list-jobs
