@@ -127,7 +127,8 @@
   - sudo timedatectl set-timezone Asia/Tokyo
 - locale
   - localectl status
-  <!-- - sudo localectl set-locale LANG=en_US.utf8 -->
+  - localectl list-locales | grep US
+  - sudo localectl set-locale LANG=en_US.utf8
   - source /etc/locale.conf
 - service
   - systemctl list-jobs
