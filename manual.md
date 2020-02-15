@@ -55,7 +55,14 @@
 - pip3 install mycli
 
 ## tmux
-- yum install tmux
+- curl -kLO https://github.com/tmux/tmux/releases/download/2.9/tmux-2.9.tar.gz
+- sudo yum -y install libevent-devel
+- tar -zxvf tmux-2.9.tar.gz
+- cd tmux-2.9
+- ./configure
+- make
+- sudo make install
+- tmux -V
 
 ## php
 - sudo yum install epel-release
