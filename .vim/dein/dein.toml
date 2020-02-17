@@ -2,23 +2,54 @@
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
 
+
 # comment out
 [[plugins]]
 repo = 'tpope/vim-commentary'
+
 
 # directory tree
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
+# file指定なしでvimを開く場合、NerdTreeを起動
+# <space>n でNerdTreeをトグル
+hook_add = '''
+  autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+  nnoremap <silent> <space>n :NERDTreeToggle<CR>
+'''
+  # let g:WebDevIconsNerdTreeBeforeGlyphPadding = " "
+  # let g:WebDevIconsNerdTreeAfterGlyphPadding = " "
+
+
 # filetype icons
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
 
+
 # status bar
 [[plugins]]
 repo = 'vim-airline/vim-airline'
+
+# air-lineのtab機能を有効にする
+# fileのpathを表示しない
+# セッションCの内容設定
+# buffers -> 空白
+hook_add = '''
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#fnamemod = ":t"
+  let g:airline_section_c = "%t"
+  let g:airline#extensions#tabline#buffers_label = ""
+'''
+
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
+
+# air-lineのテーマ指定
+hook_add = '''
+  let g:airline_theme = 'papercolor'
+'''
+
 
 # line status @git
 [[plugins]]
@@ -32,54 +63,52 @@ repo = 'Xuyuanp/nerdtree-git-plugin'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
-# auto close tag
-[[plugins]]
-repo = 'alvan/vim-closetag'
-hook_add = '''
-  let g:closetag_filetypes = 'html,php'
-'''
 
 # highlight whitespace
 [[plugins]]
 repo = 'ntpeters/vim-better-whitespace'
-
-# dark powered complete tool
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
 hook_add = '''
-  let g:deoplete#enable_at_startup = 1
-  let g:deoplete#auto_complete_delay = 200
-  let g:deoplete#auto_complete_start_length = 2
+  let g:better_whitespace_enabled=1
+  nnoremap <silent> <space>f :<C-u>ToggleWhitespace<CR>
+  nnoremap <silent> <space>F :<C-u>StripWhitespace<CR>
 '''
-# required for vim8
-[[plugins]]
-repo = 'roxma/nvim-yarp'
-[[plugins]]
-repo = 'roxma/vim-hug-neovim-rpc'
 
-# snippet
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-on_source = ['neosnippet.vim']
+# # dark powered complete tool
+# [[plugins]]
+# repo = 'Shougo/deoplete.nvim'
+# hook_add = '''
+#   let g:deoplete#enable_at_startup = 1
+#   let g:deoplete#auto_complete_delay = 200
+#   let g:deoplete#auto_complete_start_length = 2
+# '''
+# # To use nvim plugins required for vim8
+# [[plugins]]
+# repo = 'roxma/nvim-yarp'
+# [[plugins]]
+# repo = 'roxma/vim-hug-neovim-rpc'
 
-# show colors
-[[plugins]]
-repo = 'ap/vim-css-color'
 
 # show indent
 [[plugins]]
 repo = 'Yggdroot/indentLine'
+
+# インデントラインの文字指定
+# 適用除外ファイル指定
 hook_add = '''
   let g:indentLine_char = '¦'
+  let g:indentLine_fileTypeExclude = ['help']
 '''
+
 
 # auto close pare
 [[plugins]]
 repo = 'cohama/lexima.vim'
+
+# ctrl + h で閉じカッコ削除の有効
+# lexima.vimを使っていても、ドットで繰り返せるように
 hook_add = '''
   let g:lexima_ctrlh_as_backspace = 1
+  inoremap <silent> <C-l> <C-r>=lexima#insmode#leave(1, '<LT>C-G>U<LT>RIGHT>')<CR>
 '''
 
 # auto save
@@ -98,23 +127,39 @@ repo = 'tpope/vim-surround'
 [[plugins]]
 repo = 'tpope/vim-repeat'
 
+
 # interface for vim (Dark powered unite.vim)
 [[plugins]]
 repo = 'Shougo/denite.nvim'
+hook_add = '''
+  autocmd FileType denite call s:denite_my_settings()
+  function! s:denite_my_settings() abort
+    nnoremap <silent><buffer><expr> <CR>
+    \ denite#do_map('do_action')
+    nnoremap <silent><buffer><expr> d
+    \ denite#do_map('do_action', 'delete')
+    nnoremap <silent><buffer><expr> p
+    \ denite#do_map('do_action', 'preview')
+    nnoremap <silent><buffer><expr> q
+    \ denite#do_map('quit')
+    nnoremap <silent><buffer><expr> i
+    \ denite#do_map('open_filter_buffer')
+    nnoremap <silent><buffer><expr> <Space>
+    \ denite#do_map('toggle_select').'j'
+  endfunction
 
-# phpactor
-[[plugins]]
-repo = 'phpactor/phpactor'
-build = 'composer install'
-# for deoplete
-[[plugins]]
-repo = 'kristijanhusak/deoplete-phpactor'
+  nnoremap [denite] <Nop>
+  nmap <space>d [denite]
+  nnoremap <silent> [denite]d :<C-u>Denite -direction=top buffer<CR>
+  nnoremap <silent> [denite]r :<C-u>Denite -direction=top register<CR>
+  nnoremap <silent> [denite]o :<C-u>Denite -direction=top file/old<CR>
+'''
+# buffer一覧
+# register一覧
+# 最近開いたfile一覧
+
 
 # vim language-packs
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
 
-# javascript completion
-[[plugins]]
-repo = 'ternjs/tern_for_vim'
-build = 'npm install'
