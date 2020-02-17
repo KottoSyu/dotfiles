@@ -82,8 +82,8 @@ filetype indent on
 " fileTypeによってインデントを変える
 augroup fileTypeIndent
     autocmd!
-    autocmd BufNewFile,BufRead *.php setlocal tabstop=4 shiftwidth=4
-    autocmd BufNewFile,BufRead *.blade.php setlocal tabstop=2 shiftwidth=2
+    " autocmd BufNewFile,BufRead *.php setlocal tabstop=4 shiftwidth=4
+    " autocmd BufNewFile,BufRead *.blade.php setlocal tabstop=2 shiftwidth=2
 augroup END
 
 " コメント行にいる時に、自動でコメント文字挿入をなしにする

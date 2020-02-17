@@ -75,6 +75,11 @@
 ### zip unzip
 - sudo yum install -y zip unzip
 
+## SELinux
+- getenforce
+- sudo vi /etc/selinux/config
+- SELINUX=enforcing -> disabled
+- reboot
 
 ## composer
 - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
