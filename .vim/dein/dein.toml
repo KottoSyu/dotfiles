@@ -3,6 +3,11 @@
 repo = 'w0ng/vim-hybrid'
 
 
+# vim language-packs
+[[plugins]]
+repo = 'sheerun/vim-polyglot'
+
+
 # comment out
 [[plugins]]
 repo = 'tpope/vim-commentary'
@@ -73,20 +78,6 @@ hook_add = '''
   nnoremap <silent> <space>F :<C-u>StripWhitespace<CR>
 '''
 
-# # dark powered complete tool
-# [[plugins]]
-# repo = 'Shougo/deoplete.nvim'
-# hook_add = '''
-#   let g:deoplete#enable_at_startup = 1
-#   let g:deoplete#auto_complete_delay = 200
-#   let g:deoplete#auto_complete_start_length = 2
-# '''
-# # To use nvim plugins required for vim8
-# [[plugins]]
-# repo = 'roxma/nvim-yarp'
-# [[plugins]]
-# repo = 'roxma/vim-hug-neovim-rpc'
-
 
 # show indent
 [[plugins]]
@@ -128,6 +119,21 @@ repo = 'tpope/vim-surround'
 repo = 'tpope/vim-repeat'
 
 
+# To use nvim plugins required for vim8
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+
+# # dark powered complete tool
+# [[plugins]]
+# repo = 'Shougo/deoplete.nvim'
+# hook_add = '''
+#   let g:deoplete#enable_at_startup = 1
+#   let g:deoplete#auto_complete_delay = 200
+#   let g:deoplete#auto_complete_start_length = 2
+# '''
+
 # interface for vim (Dark powered unite.vim)
 [[plugins]]
 repo = 'Shougo/denite.nvim'
@@ -157,9 +163,4 @@ hook_add = '''
 # buffer一覧
 # register一覧
 # 最近開いたfile一覧
-
-
-# vim language-packs
-[[plugins]]
-repo = 'sheerun/vim-polyglot'
 
