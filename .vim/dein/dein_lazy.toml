@@ -1,0 +1,30 @@
+# auto close tag
+[[plugins]]
+repo = 'alvan/vim-closetag'
+on_ft = ['html', 'php']
+
+# 適用ファイルの指定
+hook_add = '''
+  let g:closetag_filetypes = 'html,php'
+'''
+
+
+# show colors
+[[plugins]]
+repo = 'ap/vim-css-color'
+on_ft = ['css']
+
+
+# # phpactor
+# [[plugins]]
+# repo = 'phpactor/phpactor'
+# on_ft = ['php']
+# build = 'composer install'
+# hook_add = '''
+#   nmap <silent> <space>g :<c-u>call phpactor#GotoDefinition()<CR>
+# '''
+# # for deoplete
+# [[plugins]]
+# repo = 'kristijanhusak/deoplete-phpactor'
+# on_ft = ['php']
+
