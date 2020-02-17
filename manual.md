@@ -97,23 +97,22 @@
 - ./link.sh
 
 ## mysql8
-- yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-1    .noarch.rpm -y
+- yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm -y
 - install mysql
 - install mysql-community-server
-- systemclt start mysqld.service
+- systemctl start mysqld.service
 
 ### how to start up
 - sudo cat /var/log/mysqld.log
 - mysql -u root -p
 - SET GLOBAL validate\_password.length = 8;
 - SET GLOBAL validate\_password.policy = LOW;
-- SHOW VARIABLES LIKE 'validate\_password%';
 - ALTER USER 'root'@'localhost' IDENTIFIED BY '12345678';
+- SHOW VARIABLES LIKE 'validate\_password%';
 - UNINSTALL COMPONENT 'file://component\_validate\_password';
 - create user dbuser@localhost;
 - grant all on \*.\* to dbuser@localhost;
 - INSTALL COMPONENT 'file://component\_validate\_password';
-
 
 ## centos
 - version確認
