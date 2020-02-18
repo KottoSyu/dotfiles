@@ -85,9 +85,13 @@ repo = 'Yggdroot/indentLine'
 
 # インデントラインの文字指定
 # 適用除外ファイル指定
+# インデントを表示
+# インデントを非表示
 hook_add = '''
   let g:indentLine_char = '¦'
   let g:indentLine_fileTypeExclude = ['help']
+  nnoremap <silent> <space>i :IndentLinesEnable<CR>
+  nnoremap <silent> <space>I :IndentLinesDisable<CR>
 '''
 
 

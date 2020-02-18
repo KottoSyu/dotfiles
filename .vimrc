@@ -1,3 +1,8 @@
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" deinの設定
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " deinがインストールされるディレクトリの指定
 let s:dein_dir = expand('~/.vimplug/dein') "<- dein によってプラグインがインストールされるディレクトリ
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
@@ -32,6 +37,17 @@ endif
 if dein#check_install()
  call dein#install()
 endif
+
+" tomlファイルからプラグインが削除されたら、プラグインの本体も削除
+let s:removed_plugins = dein#check_clean()
+if len(s:removed_plugins) > 0
+  call map(s:removed_plugins, "delete(v:val, 'rf')")
+  call dein#recache_runtimepath()
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 " 文字コードの指定
 set encoding=utf-8
@@ -133,78 +149,74 @@ let &t_EI .= "\e[2 q"
 let &t_SR .= "\e[4 q"
 
 
+""""""""""""""""""""""""""""""""
+"" MAPPING
+""""""""""""""""""""""""""""""""
+
+" nmap
+""""""""""""""""
+" baffer移動系
 nnoremap <silent> <C-p> :bp<CR>
 nnoremap <silent> <C-n> :bn<CR>
 nnoremap <silent> <space>q :bd<CR>
 " 保存コマンド
 nnoremap <silent> <space>w :w<CR>
 nnoremap <silent> <space>W :wa<CR>
-
-" x,sでのレジスタ指定
-" nnoremap x "_x
-" nnoremap s "_s
-
-" jjでinsert modeを抜ける時、カーソルを右（元の位置）に戻す
-imap jj <Esc>
-" imap っｊ <Esc>
-
 " 空行の挿入
 " append関数を使うやり方(line('.')で現在行を取得出来る)
 " 自動コメント文字挿入onでも挿入を防げる
 nnoremap <silent> <space>o :call append(line('.'), '')<CR>
 nnoremap <silent> <space>O :call append(line('.')-1, '')<CR>
-
 " ハイライトを消す
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
-
 " 単語ハイライト
 nnoremap <silent> <space><space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
 " 単語一括置換（ハイライト）
 nmap <space>s <space><space>:%s/<C-r>///g<Left><Left>
+" ノーマルモードでの改行
+nnoremap <space><CR> mza<CR><ESC>`z
+" ノーマルモードでの空白挿入
+nnoremap <TAB> i<space><ESC>
+" x,sでのレジスタ指定
+" nnoremap x "_x
+" nnoremap s "_s
 
-" visualmodeからのハイライト、検索、置換
+
+" imap
+"""""""""""""
+" jjでinsert modeを抜ける時、カーソルを右（元の位置）に戻す
+imap jj <Esc>
+" imap っｊ <Esc>
+" 常に画面の真ん中で入力
+inoremap j<CR> <C-g>u<Esc>zzo
+
+
+" vmap
+"""""""""""""
+" visualmodeからのハイライト、置換
 xnoremap <silent> <space><space> mz:call <SID>set_vsearch()<CR>:set hlsearch<CR>`z
-" xnoremap * :<C-u>call <SID>set_vsearch()<CR>/<C-r>/<CR>
 xmap <space>s <space><space>:%s/<C-r>///g<Left><Left>
-
+" 検索関数の定義
 function! s:set_vsearch()
   silent normal gv"zy
   let @/ = '\V' . substitute(escape(@z, '/\'), '\n', '\\n', 'g')
 endfunction
-
 " 行を移動
 " vnoremap <C-p> "zx<Up>"zP`[V`]
-vnoremap <C-n> "zx"zp`[V`]
 vnoremap <silent> <C-p> :m.-2<CR>`[V`]
+vnoremap <C-n> "zx"zp`[V`]
 " vnoremap <silent> <C-n> :m.+1<CR>`[V`]
-
 " 行を複製
 vnoremap <space>p "zy"zP
 vnoremap <space>n "zy`]"zp
 
-" インデントを表示
-nnoremap <silent> <space>i :IndentLinesEnable<CR>
-nnoremap <silent> <space>I :IndentLinesDisable<CR>
 
-" 常に画面の真ん中で入力
-inoremap j<CR> <C-g>u<Esc>zzo
-" call lexima#insmode#map_hook('after', "<CR>", "x<BS><C-o>zz")
-" inoremap <CR> <CR>x<BS><C-o>zz
-
-
+" cmap
+""""""""""""
 " コマンドラインで過去のコマンドを探す時、フィルタリング出来るようにする。
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
-
-
 " %%でアクテイブバッファのフルパスを出す(from 実践vim)
-cnoremap <expr> %% getcmdtype() == ':' ? expand('%:p:h').'/' : '%%'
 " %:p でフルパスを出せる
-" set path+=
-" find EXコマンドでファイルを見つける
-
-
-" ノーマルモードでenterで改行
-nnoremap <space><CR> mza<CR><ESC>`z
-nnoremap <TAB> i<space><ESC>
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:p:h').'/' : '%%'
 
