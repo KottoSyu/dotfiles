@@ -16,3 +16,6 @@ export PATH="/home/k_syu/bin:$PATH"
 
 # 新規フォルダ作成のパーミッション設定
 umask 002
+
+# vagrant mycent id
+readonly mycent='9fb426c'
