@@ -134,6 +134,13 @@
   - localectl list-locales | grep US
   - sudo localectl set-locale LANG=en_US.utf8
   - source /etc/locale.conf
+  - エラーの場所は以下を確認
+    - locale -a | grep ~
+    - ない場合は以下
+      - sudo localedef -f UTF-8 -i en_US en_US
+      - source /etc/locale.conf
+    - 以下のコマンドでリセットされる
+      - sudo yum update glibc-common
 - service
   - systemctl list-jobs
   - systemctl list-unit-files --type=service
