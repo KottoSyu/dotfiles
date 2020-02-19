@@ -18,9 +18,9 @@ repo = 'tpope/vim-commentary'
 repo = 'scrooloose/nerdtree'
 
 # file指定なしでvimを開く場合、NerdTreeを起動
+  # autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 # <space>n でNerdTreeをトグル
 hook_add = '''
-  autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
   nnoremap <silent> <space>n :NERDTreeToggle<CR>
 '''
   # let g:WebDevIconsNerdTreeBeforeGlyphPadding = " "

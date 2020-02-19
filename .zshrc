@@ -1,6 +1,9 @@
 ## PATH
 export PATH="$PATH:$HOME/dotfiles/bin"
 
+## locale設定
+export LANG=en_US.UTF-8
+
 ### OS毎の設定ファイルを適用
 case ${OSTYPE} in
     darwin*)
