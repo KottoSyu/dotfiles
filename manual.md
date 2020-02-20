@@ -71,6 +71,7 @@
 - sudo yum repolist
 - yum info php --enablerepo=epel,remi,remi-php73
 - sudo yum -y install --enablerepo=epel,remi,remi-php73 php php-devel php-mbstring php-pdo php-mysqlnd php-gd php-xml php-mcrypt
+  - mysqlのドライバーをいれるため、php-mysqlndを追加した
 - php -r "echo phpinfo();" | grep "php.ini"
 ### zip unzip
 - sudo yum install -y zip unzip
@@ -102,7 +103,7 @@
 - ./link.sh
 
 ## mysql8
-- yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm -y
+- yum localinstall -y https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
 - install mysql
 - install mysql-community-server
 - systemctl start mysqld.service
@@ -118,8 +119,11 @@
 - create user dbuser@localhost;
 - grant all on \*.\* to dbuser@localhost;
 - show variables like 'default_authentication_plugin';
+  - デフォルトのユーザー認証のプラグインの確認
+  - mysql8からは、「caching_sha2_password」となっている
 - select user, plugin from mysql.user;
 - alter user 'dbuser'@'localhost' identified with mysql_native_password by '';
+  - phpのpdoでは、まだ「caching_sha2_password」に対応していないため、もともと使われていた「mysql_native_password」に変更
 - INSTALL COMPONENT 'file://component\_validate\_password';
 
 ## centos
