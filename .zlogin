@@ -18,4 +18,4 @@ export PATH="/home/k_syu/bin:$PATH"
 umask 002
 
 # vagrant mycent id
-readonly mycent='9fb426c'
+readonly mycent='7311dd8'

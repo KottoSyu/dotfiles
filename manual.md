@@ -70,7 +70,7 @@
 - sudo yum update
 - sudo yum repolist
 - yum info php --enablerepo=epel,remi,remi-php73
-- sudo yum -y install --enablerepo=epel,remi,remi-php73 php php-devel php-mbstring php-pdo php-gd php-xml php-mcrypt
+- sudo yum -y install --enablerepo=epel,remi,remi-php73 php php-devel php-mbstring php-pdo php-mysqlnd php-gd php-xml php-mcrypt
 - php -r "echo phpinfo();" | grep "php.ini"
 ### zip unzip
 - sudo yum install -y zip unzip
@@ -117,6 +117,9 @@
 - UNINSTALL COMPONENT 'file://component\_validate\_password';
 - create user dbuser@localhost;
 - grant all on \*.\* to dbuser@localhost;
+- show variables like 'default_authentication_plugin';
+- select user, plugin from mysql.user;
+- alter user 'dbuser'@'localhost' identified with mysql_native_password by '';
 - INSTALL COMPONENT 'file://component\_validate\_password';
 
 ## centos
