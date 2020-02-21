@@ -156,3 +156,17 @@
 - SSL証明書error
   - vim Vagrantfile
   - config.vm.box\_download\_insecure = true
+
+## apache
+- Require all granted
+  - 全てのアクセスを許可
+  - 特定のipを許可・拒否出来る
+- AllowOverRide All
+  - .htaccessがある場合
+- FollowSymLinks
+  - シンボリックリンクのリンク先を Apache がたどれるようにする
+
+## laravel
+- php artisan key:generate
+  - APP_KEYの値が生成され、.envファイルに追加される
+  - composerでインストールすれば自動的に実行される
