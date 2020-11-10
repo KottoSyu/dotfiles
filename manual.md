@@ -52,10 +52,10 @@
 - pip3 install mycli
 
 ## tmux
-- curl -kLO https://github.com/tmux/tmux/releases/download/2.9/tmux-2.9.tar.gz
-- sudo yum -y install libevent-devel
-- tar -zxvf tmux-2.9.tar.gz
-- cd tmux-2.9
+- git clone https://github.com/tmux/tmux
+- sh autogen.sh
+- cd tmux
+- sudo yum -y install libevent-devel  (if not install)
 - ./configure
 - make
 - sudo make install
@@ -70,7 +70,17 @@
 >   - mysqlのドライバーをいれるため、php-mysqlndを追加した
 - sudo dnf module install php:remi-7.4
 - php -r "echo phpinfo();" | grep "php.ini"
-### zip unzip
+
+## xdebug
+- sudo dnf install php-pecl-xdebug
+- vi /etc/php.d/15-xdebug.ini
+  - xdebug.remote_autostart = true
+  - xdebug.remote_connect_back = true
+  - xdebug.remote_enable = true
+  - xdebug.remote_port = 9001
+- systemctl restart php-fpm
+
+## zip unzip
 - sudo yum install -y zip unzip
 
 ## SELinux
