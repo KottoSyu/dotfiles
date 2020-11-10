@@ -11,15 +11,11 @@
 
 - lua
   - which lua
-  - yum install -y lua-devel
+  - dnf --enablerepo=PowerTools install lua-devel
 
 - ruby
   - which ruby
   - yum install -y ruby-devel
-
-- python
-  - which python
-  - yum install -y python-devel
 
 - python3
   - which python3
@@ -30,19 +26,20 @@
   - git clone https://github.com/vim/vim.git
   - cd vim
   - ./configure --with-features=huge --enable-multibyte --enable-luainterp=dynamic --enable-gpm --enable-cscope --enable-fontset --enable-fail-if-missing --prefix=/usr/local --enable-python3interp=dynamic --enable-rubyinterp=dynamic
+    - LDFLAGS="$LDFLAGS -fPIC" を入れてみる(--enable-rubyinterp=dynamicのため？)
   - sudo make
   - ./src/vim --version
   - yum remove vim-enhanced
   - which vim
   - make install
   - which vim
-      ns .zsh-completions
   - vim --version
 
 ## zsh
 - which zsh
 - yum install -y zsh
-- chsh -s PATH/zsh \n (if no command chsh -> install util-linux-user)
+- chsh -s PATH/zsh (if no command chsh -> install util-linux-user)
+- echo $SHELL
 
 ## zsh-completions
 - git clone https://github.com/zsh-users/zsh-completions
@@ -66,12 +63,12 @@
 
 ## php
 - sudo yum install epel-release
-- sudo yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+- sudo yum -y install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
 - sudo yum update
 - sudo yum repolist
-- yum info php --enablerepo=epel,remi,remi-php73
-- sudo yum -y install --enablerepo=epel,remi,remi-php73 php php-devel php-mbstring php-pdo php-mysqlnd php-gd php-xml php-mcrypt
-  - mysqlのドライバーをいれるため、php-mysqlndを追加した
+> - sudo yum -y install --enablerepo=epel,remi,remi-php73 php php-devel php-mbstring php-pdo php-mysqlnd php-gd php-xml php-mcrypt
+>   - mysqlのドライバーをいれるため、php-mysqlndを追加した
+- sudo dnf module install php:remi-7.4
 - php -r "echo phpinfo();" | grep "php.ini"
 ### zip unzip
 - sudo yum install -y zip unzip
