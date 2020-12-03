@@ -68,7 +68,7 @@ set background=dark
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none ctermfg=darkgray
 " カーソルラインの色
-autocmd ColorScheme * highlight cursorLine ctermbg=black
+autocmd ColorScheme * highlight cursorLine ctermbg=233
 " visualモード選択の色
 autocmd ColorScheme * highlight Visual ctermbg=239
 " カラースキーム
