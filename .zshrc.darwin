@@ -7,3 +7,6 @@ alias python="python3"
 
 # vagrant mycentOS のIDを定数として
 readonly mycent='6e0beb8'
+
+# brew sbinのパスを追加
+export PATH="/usr/local/sbin:$PATH"
