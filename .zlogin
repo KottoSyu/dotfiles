@@ -9,7 +9,7 @@ export PATH="$PATH:/c/Windows/System32/WindowsPowerShell/v1.0/"
 # Xserver
 
 # Docker
-export DOCKER_HOST=tcp://localhost:2375
+# export DOCKER_HOST=tcp://localhost:2375
 
 # ホームのbinフォルダにPATHを通す(自作コマンド)
 export PATH="/home/k_syu/bin:$PATH"
@@ -18,5 +18,3 @@ export PATH="/home/k_syu/bin:$PATH"
 umask 002
 
 # vagrant id
-readonly mycent='7311dd8'
-readonly cent8='ddebd9b'

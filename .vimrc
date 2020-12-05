@@ -68,9 +68,9 @@ set background=dark
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none ctermfg=darkgray
 " カーソルラインの色
-autocmd ColorScheme * highlight cursorLine ctermbg=233
+autocmd ColorScheme * highlight cursorLine ctermbg=16
 " visualモード選択の色
-autocmd ColorScheme * highlight Visual ctermbg=239
+autocmd ColorScheme * highlight Visual ctermbg=16
 " カラースキーム
 colorscheme hybrid
 " visualbellを無効化
