@@ -75,6 +75,19 @@ compinit -u
 # gitのalias
 alias g='git'
 
+# gitのuser設定関数
+function guser-ksyu() {
+  git config user.name "k.syu"
+  git config user.email "k.syu6667@gmail.com"
+  git config -l
+}
+
+function guser-realsys() {
+  git config user.name "Rsys髙田秀雄"
+  git config user.email "takada.hideo@realsys.co.jp"
+  git config -l
+}
+
 ### keypadのremap
 # enter
 bindkey -s "^[OM" "^M"
