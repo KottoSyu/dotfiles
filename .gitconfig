@@ -23,3 +23,5 @@
 	helper = cache --timeout=3600
 [core]
 	editor = vim -c \"set fenc=utf-8\"
+[pull]
+	rebase = false
