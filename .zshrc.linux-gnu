@@ -12,3 +12,7 @@ function subsh()
 }
 alias jj="subsh"
 
+# windowsのexplorerで開く
+function winp {
+  pwd | sed -e "s;/mnt/c;C:;" -e "s;\/;\\\\\\\\;g" | xargs explorer.exe
+}
