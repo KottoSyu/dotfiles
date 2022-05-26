@@ -1,0 +1,357 @@
+[
+    ///----------------------------------------------------------
+    /// alt+. キーバインド (ctrlの代わりに使用)
+    ///----------------------------------------------------------
+    // alt+p ファイル名検索 ← ctrl+p
+    {
+        "key": "alt+p",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    // alt+s ファイル保存 ← ctrl+s
+    {
+        "key": "alt+s",
+        "command": "workbench.action.files.save"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "-workbench.action.files.save"
+    },
+    // alt+f ファイル内検索 ← ctrl+f
+    {
+        "key": "alt+f",
+        "command": "actions.find",
+        "when": "editorFocus || editorIsOpen"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-actions.find",
+        "when": "editorFocus || editorIsOpen"
+    },
+    // alt+h ファイル内置換 ← ctrl+h
+    // alt+h gitのファイル履歴を見る 「無効化」
+    {
+        "key": "alt+h",
+        "command": "editor.action.startFindReplaceAction",
+        "when": "editorFocus || editorIsOpen"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "-editor.action.startFindReplaceAction",
+        "when": "editorFocus || editorIsOpen"
+    },
+    {
+        "key": "alt+h",
+        "command": "-git.viewFileHistory"
+    },
+    // alt+b サイドーバーを閉じる ← ctrl+b
+    {
+        "key": "alt+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    // alt+n 新しいファイルを開く ← ctrl+n
+    {
+        "key": "alt+n",
+        "command": "workbench.action.files.newUntitledFile",
+        "args": {"viewType": "default"}
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.files.newUntitledFile"
+    },
+    // alt+w editorを閉じる ← ctrl+w
+    {
+        "key": "alt+w",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeWindow",
+        "when": "!editorIsOpen && !multipleEditorGroups"
+    },
+    {
+        "key": "alt+w",
+        "command": "-workbench.action.terminal.toggleFindWholeWord",
+        "when": "terminalFindFocused && terminalProcessSupported || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "alt+w",
+        "command": "-toggleFindWholeWord",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+w",
+        "command": "-toggleSearchEditorWholeWord",
+        "when": "inSearchEditor && searchInputBoxFocus"
+    },
+    {
+        "key": "alt+w",
+        "command": "-toggleSearchWholeWord",
+        "when": "searchViewletFocus"
+    },
+    // alt+q ウィンドウを閉じる ← ctrl+shift+w
+    {
+        "key": "alt+q",
+        "command": "workbench.action.closeWindow"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "-workbench.action.closeWindow"
+    },
+
+    ///----------------------------------------------------------
+    /// ファイル内検索・置換でのショートカット
+    ///----------------------------------------------------------
+    // ctrl+n 次の候補に移動
+    {
+        "key": "ctrl+n",
+        "command": "editor.action.nextMatchFindAction",
+        "when": "editorFocus && findInputFocussed"
+    },
+    // ctrl+p 前の候補に移動
+    {
+        "key": "ctrl+p",
+        "command": "editor.action.previousMatchFindAction",
+        "when": "editorFocus && findInputFocussed"
+    },
+    // ctrl+j 大文字/小文字区別(match case)切り替え
+    {
+        "key": "ctrl+j",
+        "command": "toggleFindCaseSensitive",
+        "when": "editorFocus && findInputFocussed"
+    },
+    // ctrl+k 単語完全一致検索(match whole word)切り替え
+    {
+        "key": "ctrl+k",
+        "command": "toggleFindWholeWord",
+        "when": "editorFocus && findInputFocussed"
+    },
+    // ctrl+l 正規表現の使用(use regular expression)切り替え
+    {
+        "key": "ctrl+l",
+        "command": "toggleFindRegex",
+        "when": "editorFocus && findInputFocussed"
+    },
+    // ctrl+; 選択行で検索(find in selection)切り替え
+    {
+        "key": "ctrl+;",
+        "command": "toggleFindInSelection",
+        "when": "editorFocus && findInputFocussed"
+    },
+    // alt+enter 全置換
+    {
+        "key": "alt+enter",
+        "command": "editor.action.replaceAll",
+        "when": "editorFocus && findWidgetVisible && replaceInputFocussed"
+    },
+
+    ///----------------------------------------------------------
+    /// クイックオープンでの移動(for windows)
+    ///----------------------------------------------------------
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    // かぶってるのを削除
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    },
+
+    ///----------------------------------------------------------
+    /// explorer キーマッピング
+    ///----------------------------------------------------------
+    // ctrl+jでも移動
+    {
+        "key": "ctrl+j",
+        "command": "list.focusDown",
+        "when": "listFocus && !inputFocus"
+    },
+    // ctrl+kでも移動
+    {
+        "key": "ctrl+k",
+        "command": "list.focusUp",
+        "when": "listFocus && !inputFocus"
+    },
+    // oでファイルを開いて、keepする
+    {
+        "key": "o",
+        "command": "multiCmd.openAndKeepEditor",
+        "when": "listFocus && !inputFocus"
+    },
+    // lでファイルを開いて、サイドバーを閉じる
+    {
+        "key": "l",
+        "command": "multiCmd.openAndCloseSidebar",
+        "when": "listFocus && !inputFocus"
+    },
+    // xで全てのフォルダを閉じる
+    {
+        "key": "x",
+        "command": "list.collapseAll",
+        "when": "listFocus && !inputFocus"
+    },
+    // rでリフレッシュ
+    {
+        "key": "r",
+        "command": "workbench.files.action.refreshFilesExplorer",
+        "when": "listFocus && !inputFocus"
+    },
+    // nfでnew file
+    {
+        "key": "n f",
+        "command": "explorer.newFile",
+        "when": "listFocus && !inputFocus"
+    },
+    // ndでnew directry
+    {
+        "key": "n d",
+        "command": "explorer.newFolder",
+        "when": "listFocus && !inputFocus"
+    },
+    // pで貼り付け
+    {
+        "key": "p",
+        "command": "filesExplorer.paste",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+    },
+    // yyでコピー
+    {
+        "key": "y y",
+        "command": "filesExplorer.copy",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+    },
+    // ddでカット
+    {
+        "key": "d d",
+        "command": "filesExplorer.cut",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+    },
+    // ctrl+backspace ファイル削除
+    {
+        "key": "ctrl+backspace",
+        "command": "moveFileToTrash",
+        "when": "explorerResourceMoveableToTrash && explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+    },
+    // enterでrename
+    {
+        "key": "enter",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+
+    ///----------------------------------------------------------
+    /// panel mapping
+    ///----------------------------------------------------------
+    // 次のpanelに移動
+    {
+        "key": "alt+n",
+        "command": "workbench.action.nextPanelView",
+        "when": "panelFocus"
+    },
+    // 前のpanelに移動
+    {
+        "key": "alt+p",
+        "command": "workbench.action.previousPanelView",
+        "when": "panelFocus"
+    },
+    // max/mini sizeトグル
+    {
+        "key": "alt+m",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when": "panelFocus"
+    },
+    // panelを右に移動
+    {
+        "key": "alt+l",
+        "command": "extension.multiCommand.execute",
+        "args": { "command": "multiCmd.movePanelToRightAndFocusPanel" },
+        "when": "panelFocus"
+    },
+    // panelを下に移動
+    {
+        "key": "alt+h",
+        "command": "extension.multiCommand.execute",
+        "args": { "command": "multiCmd.movePanelToBottomAndFocusPanel" },
+        "when": "panelFocus"
+    },
+    // toggle panel
+    {
+        "key": "alt+t",
+        "command": "extension.multiCommand.execute",
+        "args": { "command": "multiCmd.togglePanelAndFocusEditor" },
+    },
+    // alt+t panelフォーカス時はeditorフォーカスする
+    {
+        "key": "alt+t",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "panelFocus"
+    },
+
+    ///----------------------------------------------------------
+    /// その他便利mapping
+    ///----------------------------------------------------------
+    // vim visualmodeにてctrl+pで上に移動 (settings.jsonの方ではなぜかctrl+pがマッピングできないため、こっちで対応。。)
+    {
+        "key": "ctrl+p",
+        "command": "editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly && vim.active && vim.mode == 'Visual' || editorTextFocus && !editorReadonly && vim.active && vim.mode == 'VisualLine' || editorTextFocus && !editorReadonly && vim.active && vim.mode == 'VisualBlock'"
+    },
+    // shift+tab 前タブ移動(vim.normlMode)
+    {
+        "key": "shift+tab",
+        "command": "workbench.action.previousEditor",
+        "when": "editorFocus && !findWidgetVisible && vim.active && vim.mode == 'Normal'"
+    },
+    // tab 次タブ移動(vim.normlMode)
+    {
+        "key": "tab",
+        "command": "workbench.action.nextEditor",
+        "when": "editorFocus && !findWidgetVisible && vim.active && vim.mode == 'Normal'"
+    },
+    // alt+e editorをフォーカス
+    {
+        "key": "alt+e",
+        "command": "extension.multiCommand.execute",
+        "args": { "command": "multiCmd.focusEditorAndCloseOther" }
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.quickOpenPreviousRecentlyUsedEditor"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.quickOpenLeastRecentlyUsedEditor"
+    },
+    {
+        "key": "cmd+f",
+        "command": "workbench.action.replaceInFiles",
+        "when": "editorFocus"
+    },
+]

@@ -1,0 +1,286 @@
+{
+   /// editor 設定
+    "editor.tabSize": 2,                                              // 基本的インデントを2に設定
+    "editor.insertSpaces": true,                                      // タブをスペース化
+    "editor.wordWrap": "on",                                         // 折返し
+    "editor.fontFamily": "RictyDiminished NF",                        // font
+    "editor.fontSize": 16,                                         // font size
+    "editor.minimap.enabled": false,                                  // 右上にあるminimap
+    "editor.renderWhitespace": "boundary",                            // 空白文字の表示方法
+    "editor.cursorBlinking": "solid",                                 // カーソル点滅
+    "editor.renderControlCharacters": true,                           // 制御文字の表示
+    // "editor.renderIndentGuides": true,                                // インデントガイド
+    "editor.cursorSurroundingLines": 13,                              // scrollOff
+    "editor.quickSuggestionsDelay": 1000,                             // 補完の表示遅延を1秒に設定
+    "editor.suggestOnTriggerCharacters": true,                       // トリガー文字による補完の表示をONにする
+    "editor.quickSuggestions": { "other": true,    "comments": true,    "strings": true },     // 補完をコメント入力やstring入力中でも出す
+
+    // file 設定
+    "files.autoGuessEncoding": true,                                  // encoding自動推測(defaultはutf-8)
+    "files.autoSave": "onFocusChange",                                // autoSave
+    "files.trimTrailingWhitespace": true,                             // 保存時に自動で行末の空白文字を削除
+
+    /// explorer 設定
+    "explorer.confirmDelete": false,                                  // ファイル削除時の確認
+
+    /// terminal 設定
+    "terminal.integrated.fontSize": 17,                               // fontSize
+    "terminal.integrated.rendererType": "auto",                        // (windows)fontSize 16でrenderTypeをauto(canvas)にすると文字が切れるため、dom(遅いかも?)でお試し
+    "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",               // 使用terminal(windows)
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+    },
+    "terminal.integrated.defaultProfile.osx": "tmux",                      // 使用terminal(mac)
+    "terminal.integrated.profiles.osx": {
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "zsh"
+        },
+        "tmux": {
+            "path": "codetmux",
+            "icon": "terminal-tmux",
+        }
+    },
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.allowChords": false,                         // terminal focus時のキーバインド設定をterminal優先にする
+    "terminal.integrated.commandsToSkipShell": [                      // terminal focusの時にターミナルの処理をスキップするコマンド設定?
+        "extension.multiCommand.execute",                             // multiCmdがwindowsのterminalで動かないため(macでは正常)
+    ],
+
+    /// workbench 設定
+    "workbench.list.automaticKeyboardNavigation": false,              // explorerでの自動検索モードをoff(あるといきなり検索モードに)
+    "workbench.list.keyboardNavigation": "filter",                    // explorerでの検索モードをfilterに変更
+    "workbench.startupEditor": "welcomePage",                         // ウェルカムページの表示
+    "workbench.iconTheme": "material-icon-theme",                     // アイコンテーマ
+    "background.opacity": 0.91,                                       // 背景画像の透明度
+    // "window.menuBarVisibility": "toggle",                             // menu bar(windowsのみ)
+    // "window.newWindowDimensions": "maximized",                       // fullscreenで開く
+    "window.restoreFullscreen": true, // explorerでの検索方法をフィルターにする
+    "workbench.colorTheme": "Iceberg",                                // color Theme
+    "workbench.colorCustomizations": {
+        /// カラーテーマに上書きする個別の設定
+        "editor.selectionBackground": "#387ba79d",                  // 選択範囲の背景色
+        "statusBar.background": "#333333",                          // ステータスバー背景色
+        "statusBar.noFolderBackground": "#333333",                  // ステータスバー背景色(フォルダを開いていないとき)
+        "statusBar.debuggingBackground": "#333333",                 // ステータスバー背景色(デバッグ時)
+        "statusBar.foreground": "#00e8dc",                          // ステータスバー前景色
+        "statusBar.noFolderForeground": "#00e8dc",                  // ステータスバー前景色(フォルダを開いていないとき)
+        "statusBar.debuggingForeground": "#00e8dc",                 // ステータスバー前景色(デバッグ時)
+        "statusBar.border": "#00e8dc",                              // ステータスバーの境界線
+        "statusBar.noFolderBorder": "#00e8dc",                      // ステータスバーの境界線(フォルダを開いていないとき)
+        "statusBar.debuggingBorder": "#00e8dc",                     // ステータスバーの境界線(デバッグ時)
+        // "sideBar.background": "#202020",                            // サイドバーの背景色
+        // "sideBar.foreground": "#00e8dc",                            // サイドバーの前景色
+        "sideBarSectionHeader.foreground": "#00e8dc",               // サイドバーのセクションヘッダーの前景色
+        // "sideBarSectionHeader.background": "#333333",               // サイドバーのセクションヘッダーの背景色
+        // "sideBar.border": "#00e8dc",                                // サイドバーの境界線
+        // "button.foreground": "#00e8dc",                             // ボタンの前景色
+        "activityBar.background": "#333333",                        // アクティビティバーの背景色
+        "activityBar.foreground": "#00e8dc",                        // アクティビティバーの前景色
+        "activityBar.border": "#00e8dc",                            // アクティビティバーの境界線
+        "activityBarBadge.background": "#00e8dc",                   // アクティビティ通知バッジの背景色
+        "activityBarBadge.foreground": "#333333",                   // アクティビティ通知バッジの前景色
+        // "editor.lineHighlightBackground": "#333333",                // 選択している行の強調色
+        // "scrollbarSlider.background": "#00e8dc",                    // スクロールバーの色
+        "scrollbarSlider.activeBackground": "#00b2e875",              // アクテイブ中のスクロールバーの色
+        // "scrollbarSlider.hoverBackground": "#00ccffcc",             // ホバー中のスクロールバーの色
+        "scrollbar.shadow": "#00e8dc",                              // スクロールの影
+        "tab.activeBorder": "#00e8dc",                              // アクティブタブの境界線
+        "tab.activeForeground": "#00e8dc",                          // アクティブタブの前景色
+        "tab.hoverForeground": "#00e8dc",                           // カーソルを置いた時のタブの前景色
+        // "list.activeSelectionForeground": "#00e8dc",                // リスト選択のとき、選択された項目のツリーリスト前景色
+        // "list.focusForeground": "#00e8dc",                          // リストがアクティブのとき、フォーカスされた項目のツリーリスト前景色
+        // "list.hoverForeground": "#00e8dc",                          // マウス操作で項目をホバーするときのリスト前景色
+        // "editorSuggestWidget.selectedBackground": "#333333",        // サジェスト欄、選択中項目の背景色
+        // "editorLineNumber.activeForeground": "#00e8dc",             // エディタのアクティブ行番号
+        // "panel.border": "#00e8dc",                                  // パネル ボーダーの境界線
+        "panelTitle.activeBorder": "#00e8dc",                       // アクティブパネルのタイトルの境界線
+        "panelTitle.activeForeground": "#00e8dc",                   // アクティブパネルのタイトルの文字色
+        // "editorGroup.border": "#00e8dc"                             // 複数のエディターグループを分離する境界線
+      },
+
+    /// git 設定
+    "git.enableSmartCommit": true,
+    "zenMode.hideLineNumbers": false,                       // lineNumberの非表示をfalse
+    "zenMode.hideStatusBar": false,                         // statusBarの非表示をfalse
+    // "zenMode.fullScreen": false,
+
+    /// keyboard 設定
+    "keyboard.dispatch": "keyCode",                         // macでのUS配列キーボードのキー認証差異をなくすため（[ や ] etc..)
+
+    /// html 関連設定
+    "[html]": {
+        // "editor.tabSize": 2,
+        // "editor.autoClosingBrackets": "always",
+        // "editor.autoClosingQuotes": "always",
+    },
+
+    /// php 関連設定
+    "[php]": {
+        // "editor.tabSize": 2,
+        // "editor.autoClosingBrackets": "always",
+        // "editor.autoClosingQuotes": "always",
+    },
+    "intelephense.diagnostics.run": "onSave",               // 文法チェックのタイミング
+
+    /// extesions 設定
+    // auto-close-tag (vscodeのデフォルトで対応していないファイルに対応)
+    "auto-close-tag.activationOnLanguage": [
+        "php",
+        "blade",
+    ],
+
+    // auto-rename-tag (vscodeのデフォルトで対応していないファイルに対応)
+    "auto-rename-tag.activationOnLanguage": [
+        "html",
+        "php",
+        "blade",
+    ],
+
+    // emmet 設定
+    "emmet.includeLanguages": {                            // emmetの有効言語設定
+        // "php": "html",
+        "blade": "html",
+    },
+    // "emmet.triggerExpansionOnTab": true,
+
+    /// vim 設定
+    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.enableNeovim": false,                              // Neovimを使う
+    "vim.useCtrlKeys": true,                                // 諸々のctrlキーを使った操作を有効にする
+    "vim.useSystemClipboard": false,                        // システムのclipboardにコピー
+    "vim.gdefault": true,                                   // 検索で「g」オプションをデフォルトにする
+    "vim.incsearch": true,                                  // インクリメント検索
+    "vim.hlsearch": true,                                   // ハイライト検索
+    "vim.ignorecase": true,                                 // 大文字・小文字区別
+    "vim.smartcase": true,                                  // スマートケース
+    "vim.visualstar": true,                                 // visual Modeでの[*],[#]による検索
+    "vim.scroll": 5,                                        // ctrl+u,dのスクロール行を指定
+    "vim.highlightedyank.enable": true,                                      // yank highlight
+    "vim.highlightedyank.color": "rgba(250, 240, 170, 0.5)",                 // yank highlight color
+    "vim.highlightedyank.textColor": "black",                                // yank highlight text color
+    "vim.searchHighlightColor": "rgba(250, 240, 170, 0.5)",                  // search highlight color
+    "vim.searchHighlightTextColor": "black",                                 // search highlight text color
+
+    /// vim キーバインド
+    "vim.leader": "<space>",                    // leaderキー設定
+
+    // operatorPending Mode
+    "vim.operatorPendingModeKeyBindingsNonRecursive": [
+    ],
+
+    // insert Mode
+    "vim.insertModeKeyBindingsNonRecursive": [
+        { "before": ["j","j"],    "after": ["<Esc>"]},                                    // jjでインサートモードを抜ける
+        { "before": ["C-l"],    "commands": ["cursorRight"] },                            // ctrl+lで右に移動(commandにするとrepeatable!!)
+        { "before": ["C-m"],    "after": ["<Esc>","z","t","a","<CR>"] },                  // ctrl+mで画面のztを実行(上のctrl+lの修正により、動きがおかしい)
+        // { "before": ["C-n"],    "commands": ["editor.action.triggerSuggest"] },           // ctrl+nで補完を呼び出す
+        // { "before": ["<BS>"],    "commands": ["deleteLeft"] },                            // backspaceをremap(undoの動きがおかしくなるため)
+    ],
+
+    // normal Mode
+    "vim.normalModeKeyBindingsNonRecursive": [
+        { "before": ["S"],    "after": ["s"] },                               // [S] でvim.sneakの[s]を起動（後方2文字検索）
+        // { "before": ["V"],    "after": ["V","<Leader>","<Leader>","<Leader>","b","d","j","k"] },         // [V] VisualLine Easymtion Line 検索
+        { "before": ["s"],    "after": ["/","/","/","<CR>","<Leader>","<Leader>","2","s"] },             // [s] Easymotion 2s 検索
+        { "before": ["L"],    "after": ["<Leader>","<Leader>","<Leader>","b","d","j","k"] },         // [S] Easymtion Line 検索
+        { "before": ["*"],    "after": ["*","N"] },                               // [*] 後方検索の最初のフォーカスを変更
+        { "before": ["u"],    "commands": ["undo"] },                             // [u] vscodeのundoにする
+        { "before": ["U"],    "commands": [":undo"] },                            // [U] vscodeのundoを実行
+        { "before": ["C-r"],    "commands": ["redo"] },                           // [C-r] vscodeのredoにする
+        // { "before": ["<CR>"],    "after": ["a","<Space>","<Esc>"] },              // enter 空白を挿入
+        { "before": ["Z","Z"],    "commands": [":wq"] },                          // [ZZ]
+        { "before": ["j"],    "after": ["g","j"] },                               // j移動をgjに変更
+        { "before": ["J"],    "after": ["1","0","j"] },                               // Jを10jに変更
+        { "before": ["<Leader>","j"],    "after": ["J"] },                            // Jを復元
+        { "before": ["k"],    "after": ["g","k"] },                               // k移動をgkに変更
+        { "before": ["K"],    "after": ["1","0","k"] },                               // Kを10kに変更
+        { "before": ["C-o"],    "commands": ["workbench.action.navigateBack"] },                // [C-o] vscodeの機能を利用する(動作がおかしいため)
+        { "before": ["C-i"],    "commands": ["workbench.action.navigateForward"] },             // [C-i] vscodeの機能を利用する(動作がおしかいため)
+        { "before": ["C-l"],    "after": ["z","z"],    "commands": [":noh"] },                  // [C-l] ハイライトを消す
+        { "before": ["C-n"],    "commands": ["workbench.action.quickOpenPreviousRecentlyUsedEditor"] },       // [C-n] 直前のタブに移動(タブ切り替え)
+        { "before": ["<Leader>","e"],    "commands": ["workbench.view.explorer"] },                                  // explorerを開く
+        // { "before": ["<Leader>","s"],    "commands": ["workbench.action.replaceInFiles"] },                          // searchを開く
+        { "before": ["<Leader>","s"],    "after": [":","%","s","/","/"] },                          // 置換する
+        { "before": ["<Leader>","g"],    "commands": ["workbench.action.replaceInFiles"] },                                  // grepを開く
+        // { "before": ["<Leader>","g"],    "commands": ["workbench.view.scm"] },                                       // gitを開く
+        { "before": ["<Leader>","t"],    "commands": ["workbench.action.terminal.toggleTerminal"] },                 // terminalを開く
+        // { "before": ["<Leader>","q"],    "commands": ["workbench.action.quickOpen"] },                               // quickOpenを開く
+        // { "before": ["<Leader>","p"],    "commands": ["editor.action.marker.prev"] },                                // 前のproblemに移動
+        { "before": ["C-w","C-l"],    "commands": ["workbench.action.moveEditorToNextGroup"] },               // editorを次のグループに移動
+        { "before": ["C-w","C-h"],    "commands": ["workbench.action.moveEditorToPreviousGroup"] },           // editorを前のグループに移動
+        { "before": ["<Leader>","z"],    "commands": ["workbench.action.toggleZenMode"] },                           // zenMode切り替え
+        // { "before": ["<Esc>","<Esc>"],    "commands": ["workbench.action.exitZenMode"] },                            // zenMode終了
+    ],
+
+    // visual Mode
+    "vim.visualModeKeyBindingsNonRecursive": [
+        { "before": ["g","c"],    "commands": ["extension.oneLineComments.toggleLineComment"] },             // [gc] extensionのoneLineCommentsを実施
+        { "before": ["s"],    "after": ["/","/","/","<CR>","<Leader>","<Leader>","2","s"] },             // [s] Easymotion 2s 検索
+        { "before": ["L"],    "after": ["<Leader>","<Leader>","<Leader>","b","d","j","k"] },         // [S] Easymtion Line 検索
+        { "before": ["*"],    "after": ["*","N"] },                               // [*] 後方検索の最初のフォーカスを変更
+        { "before": ["P"],    "after": ["\"","0","p"] },                     // Pでyyした内容を貼り付け
+        // { "before": ["C-p"],    "commands": ["editor.action.moveLinesUpAction"] },                         // 選択範囲移動(上移動はkeybindingsで定義)
+        { "before": ["C-n"],    "commands": ["editor.action.moveLinesDownAction"] },                         // 選択範囲移動(上移動はkeybindingsで定義)
+        { "before": ["<Leader>","p"],    "commands": ["editor.action.copyLinesUpAction"] },                  // 選択範囲コピー(上)
+        { "before": ["<Leader>","n"],    "commands": ["editor.action.copyLinesDownAction"] },                // 選択範囲コピー(下)
+    ],
+
+    /// multi command
+    "multiCommand.commands": [
+        // { "command": "multiCmd.selectRecentlyUsedEditor",    "sequence": ["workbench.action.quickOpenPreviousRecentlyUsedEditor", "list.select"] },
+        // ファイルを開き、キープする(プレビューモードで開かれるため)
+        { "command": "multiCmd.openAndKeepEditor",    "sequence": ["list.toggleExpand", "workbench.action.keepEditor"] },
+        // ファイルを開き、サイドバーを閉じる
+        { "command": "multiCmd.openAndCloseSidebar",    "sequence": ["list.select", "workbench.action.closeSidebar"] },
+        // editorを開く(panelやsidebarは閉じる)
+        { "command": "multiCmd.focusEditorAndCloseOther",    "sequence": ["workbench.action.focusActiveEditorGroup", "workbench.action.closePanel", "workbench.action.closeSidebar"] },
+        // panelを右に移動して、panelにフォーカス(なぜか移動したら、フォーカスが外れるため)
+        { "command": "multiCmd.movePanelToRightAndFocusPanel",    "sequence": ["workbench.action.positionPanelRight", "workbench.action.focusPanel"] },
+        // panelを下に移動して、panelにフォーカス(なぜか移動したら、フォーカスが外れるため)
+        { "command": "multiCmd.movePanelToBottomAndFocusPanel",    "sequence": ["workbench.action.positionPanelBottom", "workbench.action.focusPanel"] },
+        // toggle panel でなぜかtermialの時だけfocusが移るため、エディター固定に矯正
+        { "command": "multiCmd.togglePanelAndFocusEditor",    "sequence": ["workbench.action.togglePanel", "workbench.action.focusActiveEditorGroup"] },
+    ],
+
+    /// syncしない設定項目
+    "settingsSync.ignoredSettings": [
+        "vim.enableNeovim",                                               // Neovimを使う
+        "vim.autoSwitchInputMethod.enable",                               // 自動IMEスイッチ機能 ON
+        "vim.autoSwitchInputMethod.defaultIM",                            // デフォルトIM
+        "vim.autoSwitchInputMethod.obtainIMCmd",                          // IM取得コマンド設定
+        "vim.autoSwitchInputMethod.switchIMCmd",                          // IM切り替えコマンド設定
+        "background.filepath",                                            // 背景画像のパス
+    ],
+    "git.path": "C:\\Users\\realsys\\my_favorite_app\\wslgit.exe",
+    "vim.autoSwitchInputMethod.enable": true,
+    "vim.autoSwitchInputMethod.defaultIM": "0",
+    "vim.autoSwitchInputMethod.obtainIMCmd": "C:\\Users\\realsys\\my_favorite_app\\zenhan.exe 0",
+    "vim.autoSwitchInputMethod.switchIMCmd": "C:\\Users\\realsys\\my_favorite_app\\zenhan.exe {im}",
+    "background.filepath": "C:\\Users\\realsys\\Pictures\\MyWallpaper.jpg",
+
+
+    /// 未整理
+    "liveServer.settings.donotShowInfoMsg": true,
+    "emmet.variables": {
+        "lang": "ja",
+        "charset": "UTF-8"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+}
