@@ -1,0 +1,5 @@
+#!/bin/zsh
+SESSION="vscode[`pwd | md5 | cut -c -5`]"
+# SESSION="vscode[`pwd | rev | cut -d'/' -f1 | rev`]"
+# echo $SESSION
+tmux attach-session -d -t $SESSION || tmux new-session -s $SESSION
