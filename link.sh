@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 DOT_FILES=(.vimrc .vim .gitconfig .zshrc .myclirc .my.cnf .tmux.conf)
 

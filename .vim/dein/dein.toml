@@ -65,8 +65,8 @@ repo = 'airblade/vim-gitgutter'
 repo = 'Xuyuanp/nerdtree-git-plugin'
 
 # use git @vim
-[[plugins]]
-repo = 'tpope/vim-fugitive'
+# [[plugins]]
+# repo = 'tpope/vim-fugitive'
 
 
 # highlight whitespace
@@ -124,10 +124,10 @@ repo = 'tpope/vim-repeat'
 
 
 # To use nvim plugins required for vim8
-[[plugins]]
-repo = 'roxma/nvim-yarp'
-[[plugins]]
-repo = 'roxma/vim-hug-neovim-rpc'
+# [[plugins]]
+# repo = 'roxma/nvim-yarp'
+# [[plugins]]
+# repo = 'roxma/vim-hug-neovim-rpc'
 
 # # dark powered complete tool
 # [[plugins]]
@@ -139,31 +139,31 @@ repo = 'roxma/vim-hug-neovim-rpc'
 # '''
 
 # interface for vim (Dark powered unite.vim)
-[[plugins]]
-repo = 'Shougo/denite.nvim'
-hook_add = '''
-  autocmd FileType denite call s:denite_my_settings()
-  function! s:denite_my_settings() abort
-    nnoremap <silent><buffer><expr> <CR>
-    \ denite#do_map('do_action')
-    nnoremap <silent><buffer><expr> d
-    \ denite#do_map('do_action', 'delete')
-    nnoremap <silent><buffer><expr> p
-    \ denite#do_map('do_action', 'preview')
-    nnoremap <silent><buffer><expr> q
-    \ denite#do_map('quit')
-    nnoremap <silent><buffer><expr> i
-    \ denite#do_map('open_filter_buffer')
-    nnoremap <silent><buffer><expr> <Space>
-    \ denite#do_map('toggle_select').'j'
-  endfunction
+# [[plugins]]
+# repo = 'Shougo/denite.nvim'
+# hook_add = '''
+#   autocmd FileType denite call s:denite_my_settings()
+#   function! s:denite_my_settings() abort
+#     nnoremap <silent><buffer><expr> <CR>
+#     \ denite#do_map('do_action')
+#     nnoremap <silent><buffer><expr> d
+#     \ denite#do_map('do_action', 'delete')
+#     nnoremap <silent><buffer><expr> p
+#     \ denite#do_map('do_action', 'preview')
+#     nnoremap <silent><buffer><expr> q
+#     \ denite#do_map('quit')
+#     nnoremap <silent><buffer><expr> i
+#     \ denite#do_map('open_filter_buffer')
+#     nnoremap <silent><buffer><expr> <Space>
+#     \ denite#do_map('toggle_select').'j'
+#   endfunction
 
-  nnoremap [denite] <Nop>
-  nmap <space>d [denite]
-  nnoremap <silent> [denite]d :<C-u>Denite -direction=top buffer<CR>
-  nnoremap <silent> [denite]r :<C-u>Denite -direction=top register<CR>
-  nnoremap <silent> [denite]o :<C-u>Denite -direction=top file/old<CR>
-'''
+#   nnoremap [denite] <Nop>
+#   nmap <space>d [denite]
+#   nnoremap <silent> [denite]d :<C-u>Denite -direction=top buffer<CR>
+#   nnoremap <silent> [denite]r :<C-u>Denite -direction=top register<CR>
+#   nnoremap <silent> [denite]o :<C-u>Denite -direction=top file/old<CR>
+# '''
 # buffer一覧
 # register一覧
 # 最近開いたfile一覧

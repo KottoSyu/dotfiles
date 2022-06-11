@@ -2,7 +2,7 @@
 # export LC_ALL=en_US.UTF-8
 
 # python3をデフォルトにする
-alias python="python3"
+# alias python="python3"
 # whichした場所でaliasを変えればイケるんじゃないか説
 
 # vagrant mycentOS のIDを定数として

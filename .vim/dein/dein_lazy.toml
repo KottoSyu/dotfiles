@@ -1,18 +1,18 @@
 # auto close tag
-[[plugins]]
-repo = 'alvan/vim-closetag'
-on_ft = ['html', 'php']
+# [[plugins]]
+# repo = 'alvan/vim-closetag'
+# on_ft = ['html', 'php']
 
 # 適用ファイルの指定
-hook_add = '''
-  let g:closetag_filetypes = 'html,php'
-'''
+# hook_add = '''
+#   let g:closetag_filetypes = 'html,php'
+# '''
 
 
 # show colors
-[[plugins]]
-repo = 'ap/vim-css-color'
-on_ft = ['css']
+# [[plugins]]
+# repo = 'ap/vim-css-color'
+# on_ft = ['css']
 
 
 # # phpactor
